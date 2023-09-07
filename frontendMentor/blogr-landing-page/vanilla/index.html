@@ -5,6 +5,7 @@
 		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="normalize.css" />
+		<link rel="stylesheet" href="style.css" />
 		<title>Vite App</title>
 	</head>
 	<body>
@@ -12,29 +13,59 @@
 			<header>
 				<nav>
 					<div>
-						<h1>blogr</h1>
+						<h1 class="hide">blogr</h1>
 						<a href="./">
 							<img src="/logo.svg" alt="logo" />
 						</a>
 					</div>
-					<ul>
+					<div class="dropdown-links">
 						<div>
-							<li>Product</li>
-							<li>Company</li>
-							<li>Connect</li>
+							<button>Product</button>
+							<div class="dropdown">
+								<ul>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+								</ul>
+							</div>
 						</div>
 						<div>
-							<li>Login</li>
-							<li>Sign up</li>
+							<button>Company</button>
+							<div class="dropdown">
+								<ul>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+								</ul>
+							</div>
 						</div>
-					</ul>
+						<div>
+							<button>Connect</button>
+							<div class="dropdown">
+								<ul>
+									<li></li>
+									<li></li>
+									<li></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div>
+						<li>Login</li>
+						<li>Sign up</li>
+					</div>
 				</nav>
 			</header>
 			<main>
-				<h2>A Modern publishing platform</h2>
-				<p>Grow your audience and build your online brand</p>
-				<a href="./#">Start For Free</a>
-				<a href="./#">Learn More</a>
+				<div class="hero">
+					<h2>A Modern publishing platform</h2>
+					<p>Grow your audience and build your online brand</p>
+					<a href="./#">Start For Free</a>
+					<a href="./#">Learn More</a>
+				</div>
 				<section>
 					<h3>Designed for the future</h3>
 					<div>
