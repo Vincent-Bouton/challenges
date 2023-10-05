@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<div id="app">
-			<header>
+			<header class="header">
 				<nav>
 					<div>
 						<h1 class="hide">blogr</h1>
@@ -18,17 +18,22 @@
 							<img src="/logo.svg" alt="logo" />
 						</a>
 					</div>
-					<div class="burger">
+					<div class="links">
+						<button class="burger">
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+						</button>
 						<div class="dropdown-links">
 							<div>
 								<button>Product</button>
 								<div class="dropdown">
 									<ul>
-										<li></li>
-										<li></li>
-										<li></li>
-										<li></li>
-										<li></li>
+										<li>Overview</li>
+										<li>Pricing</li>
+										<li>Marketplace</li>
+										<li>Features</li>
+										<li>Integrations</li>
 									</ul>
 								</div>
 							</div>
@@ -36,10 +41,10 @@
 								<button>Company</button>
 								<div class="dropdown">
 									<ul>
-										<li></li>
-										<li></li>
-										<li></li>
-										<li></li>
+										<li>About</li>
+										<li>Team</li>
+										<li>Blog</li>
+										<li>Careers</li>
 									</ul>
 								</div>
 							</div>
@@ -47,9 +52,9 @@
 								<button>Connect</button>
 								<div class="dropdown">
 									<ul>
-										<li></li>
-										<li></li>
-										<li></li>
+										<li>Contact</li>
+										<li>Newsletter</li>
+										<li>LinkedIn</li>
 									</ul>
 								</div>
 							</div>
@@ -62,14 +67,14 @@
 				</nav>
 			</header>
 			<main>
-				<div class="hero">
+				<header class="hero">
 					<h2>A modern publishing platform</h2>
 					<p>Grow your audience and build your online brand</p>
 					<div class="buttons">
 						<a href="./#" class="button button-white">Start For Free</a>
 						<a href="./#" class="button button-blank">Learn More</a>
 					</div>
-				</div>
+				</header>
 				<section>
 					<h3>Designed for the future</h3>
 					<div>
@@ -134,7 +139,7 @@
 			<footer>
 				<div>
 					<h3>Blogr</h3>
-					<a href="./"><img src="./public/logo.svg" alt="logo Blogr" /></a>
+					<a href="./"><img src="/logo.svg" alt="logo Blogr" /></a>
 				</div>
 				<div>
 					<h4>Product</h4>
