@@ -37,6 +37,7 @@ button {
 	text-decoration: none;
 	text-align: center;
 	max-width: 137px;
+	cursor: pointer;
 }
 
 .button-white {
@@ -48,7 +49,19 @@ button {
 .button-white:hover {
 	background-color: #ff7b86;
 	color: white;
-	cursor: pointer;
+	transition: all 0.1s ease-in-out;
+}
+
+.button-color {
+	background: linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
+	color: white;
+	font-size: 16px;
+	transition: all 0.1s ease-in-out;
+}
+
+.button-color:hover {
+	background: white;
+	color: #ff7b86;
 	transition: all 0.1s ease-in-out;
 }
 
@@ -62,18 +75,10 @@ button {
 .button-blank:hover {
 	background-color: #fff;
 	color: #ff7b86;
-	cursor: pointer;
 	transition: all 0.1s ease-in-out;
 }
 
-/* -------------------------------- HEADER -------------------------------- */
-
-.header {
-	z-index: 2;
-	color: #fff;
-	width: 100vw;
-	background-color: black;
-}
+/* -------------------------------- BURGER -------------------------------- */
 
 .burger {
 	height: 36px;
@@ -88,34 +93,127 @@ button {
 	background-color: #fff;
 }
 
+.bar:nth-child(1) {
+	transition: transform 0.2s linear;
+}
+
 .bar:nth-child(2) {
 	margin: 6px auto;
-	transition: margin 0.2s linear;
+	transition: margin 0.2s 0.2s linear, background-color 0s 0.2s linear;
+}
+
+.bar:nth-child(3) {
+	transition: transform 0.2s linear;
 }
 
 .toggle .bar:nth-child(2) {
 	margin: -2px auto;
-	transition: margin 0.2s linear;
-	display: none;
+	background-color: transparent;
+	transition: margin 0.2s linear, background-color 0s 0.2s linear;
 }
 .toggle .bar:nth-child(1) {
 	transform: rotate(45deg);
 	transition: transform 0.2s 0.2s linear;
 }
 .toggle .bar:nth-child(3) {
-	display: none;
-	transition: all 0.2s 0.2s linear;
+	transform: rotate(-45deg);
+	transition: transform 0.2s 0.2s linear;
 }
 
-/* .dropdown-links {
+/* -------------------------------- HEADER -------------------------------- */
+
+.header {
+	z-index: 2;
+	color: #fff;
+	width: 100vw;
+	background-color: transparent;
+	position: absolute;
+	top: 56px;
+}
+
+.header nav {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	width: 90%;
+	margin: auto;
+}
+
+/* ------------- Dropdown -------------- */
+
+.dropdown-links {
+	background-color: #fff;
+	padding: 15px;
+	width: 90%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, 45px);
+	border-radius: 5px;
+}
+
+.dropdown-links button {
+	color: #1f3e5a;
+	cursor: pointer;
+	margin: 12px auto;
+	position: relative;
+	font-size: 18px;
+	padding: 6px;
+	display: flex;
+}
+.dropdown-links button::before {
+	background: url(./images/icon-arrow-dark.svg) no-repeat;
+	content: "";
+	height: 10px;
+	width: 10px;
+	position: absolute;
+	right: -8px;
+	top: 12px;
+}
+
+.dropdown-links ul {
+	margin: auto;
+	color: #1f3e5a;
+	font-size: 16px;
+	background-color: rgba(151, 151, 151, 0.08);
+	border-radius: 5px;
+	padding: 25px;
+	width: 80%;
+}
+.dropdown-links li {
+	list-style-type: none;
+	margin-bottom: 12px;
+}
+
+.dropdown {
+	visibility: hidden;
+	position: absolute;
+}
+
+.active {
+	position: relative;
+	visibility: visible;
+}
+
+.hidden-burger-dropdown {
 	display: none;
-} */
+}
+
+.connection ul {
+	background-color: transparent;
+	margin: auto;
+}
 
 /* -------------------------------- Hero -------------------------------- */
 
-/* .hero {
-	background: -300px url(../images/bg-pattern-intro-desktop.svg),
-		linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
+.hero {
+	background: -400px url(../images/bg-pattern-intro-mobile.svg),
+		linear-gradient(135deg, #ff8f71 20%, #ff3e55 120%);
+}
+
+.hero {
+	/* background: -300px url(../images/bg-pattern-intro-desktop.svg),
+		linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%); */
 	height: 600px;
 	width: 100%;
 	border-radius: 0px 0px 0px 100px;
@@ -145,4 +243,4 @@ button {
 }
 .hero .buttons {
 	margin-top: 38px;
-} */
+}
