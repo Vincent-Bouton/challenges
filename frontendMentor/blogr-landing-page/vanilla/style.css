@@ -158,7 +158,7 @@ button {
 	margin: 12px auto;
 	position: relative;
 	font-size: 18px;
-	padding: 6px;
+	padding: 12px;
 	display: flex;
 }
 .dropdown-links button::before {
@@ -168,16 +168,16 @@ button {
 	width: 10px;
 	position: absolute;
 	right: -8px;
-	top: 12px;
+	top: 17px;
 }
 
 .dropdown-links ul {
-	margin: auto;
+	margin: 0 auto;
 	color: #1f3e5a;
 	font-size: 16px;
 	background-color: rgba(151, 151, 151, 0.08);
 	border-radius: 5px;
-	padding: 25px;
+	padding: 12px 25px;
 	width: 80%;
 }
 .dropdown-links li {
@@ -188,6 +188,19 @@ button {
 .dropdown {
 	visibility: hidden;
 	position: absolute;
+}
+
+.dropdown ul {
+	text-align: center;
+}
+
+.dropdown ul li {
+	margin: 24px auto;
+}
+
+.dropdown a {
+	text-decoration: none;
+	color: #1f3e5a;
 }
 
 .active {
@@ -202,6 +215,23 @@ button {
 .connection ul {
 	background-color: transparent;
 	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	border-top: 1px solid #e8e4e4;
+	margin-top: 24px;
+	padding-top: 24px;
+}
+
+.connection ul a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.connection ul .button {
+	margin: auto;
+	min-width: 137px;
 }
 
 /* -------------------------------- Hero -------------------------------- */
