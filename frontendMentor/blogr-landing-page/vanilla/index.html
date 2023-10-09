@@ -77,8 +77,17 @@
 						<a href="./#" class="button button-blank">Learn More</a>
 					</div>
 				</header>
-				<section>
+				<section class="future">
 					<h3>Designed for the future</h3>
+					<div id="graph-image">
+						<picture>
+							<source
+								media="(min-width : 400px)"
+								srcset="./images/illustration-editor-desktop.svg"
+							/>
+							<img src="./images/illustration-editor-mobile.svg" alt="graph" />
+						</picture>
+					</div>
 					<div>
 						<h4>Introducing an extensible editor</h4>
 						<p>
@@ -99,9 +108,7 @@
 							you’re in full control.
 						</p>
 					</div>
-					<div id="graph-image">
-						<img src="./images/illustration-editor-desktop.svg" alt="graph" />
-					</div>
+
 					<aside>
 						<div class="illustration">
 							<img
@@ -109,14 +116,26 @@
 								alt="Illustration of Two phones on Blogr"
 							/>
 						</div>
-						<h4>State of the Art Infrastructure</h4>
-						<p>
-							With reliability and speed in mind, worldwide data centers provide
-							the backbone for ultra-fast connectivity. This ensures your site
-							will load instantly, no matter where your readers are, keeping
-							your site competitive.
-						</p>
+						<div class="aside-text">
+							<h4>State of the Art Infrastructure</h4>
+							<p>
+								With reliability and speed in mind, worldwide data centers
+								provide the backbone for ultra-fast connectivity. This ensures
+								your site will load instantly, no matter where your readers are,
+								keeping your site competitive.
+							</p>
+						</div>
 					</aside>
+					<picture>
+						<source
+							media="(min-width:400px)"
+							srcset="./images/illustration-laptop-desktop.svg"
+						/>
+						<img
+							src="./images/illustration-laptop-mobile.svg"
+							alt="Illustration of an open laptop"
+						/>
+					</picture>
 					<div>
 						<h4>Free, open, simple</h4>
 						<p>
@@ -140,7 +159,7 @@
 			</main>
 			<footer>
 				<div>
-					<h3>Blogr</h3>
+					<h3 class="hide">Blogr</h3>
 					<a href="./"><img src="/logo.svg" alt="logo Blogr" /></a>
 				</div>
 				<div>

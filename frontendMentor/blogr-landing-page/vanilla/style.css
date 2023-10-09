@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oxygen&family=Oxygen+Mono&display=swap");
 
+/* -------------------------------- MOBILE -------------------------------- */
+
 /* -------------------------------- GLOBAL -------------------------------- */
 
 * {
@@ -169,6 +171,12 @@ button {
 	position: absolute;
 	right: -8px;
 	top: 17px;
+	transition: transform 0.1s linear;
+}
+
+.dropdown-links button:hover::before {
+	transform: rotate(90deg);
+	transition: transform 0.1s linear;
 }
 
 .dropdown-links ul {
@@ -202,6 +210,9 @@ button {
 	text-decoration: none;
 	color: #1f3e5a;
 }
+.dropdown a:hover {
+	color: #2a89dd;
+}
 
 .active {
 	position: relative;
@@ -221,12 +232,19 @@ button {
 	text-align: center;
 	border-top: 1px solid #e8e4e4;
 	margin-top: 24px;
-	padding-top: 24px;
+	padding: 24px 0px;
+}
+
+.connection ul li:first-child {
+	margin-bottom: 24px;
 }
 
 .connection ul a {
 	color: inherit;
 	text-decoration: none;
+}
+.connection ul a:hover {
+	color: #2a89dd;
 }
 
 .connection ul .button {
@@ -273,4 +291,124 @@ button {
 }
 .hero .buttons {
 	margin-top: 38px;
+	display: flex;
+	gap: 20px 20px;
+	flex-wrap: wrap;
+}
+
+/* -------------------------------- Sections -------------------------------- */
+
+/* ------------- Future -------------- */
+
+.future {
+	margin-top: 100px;
+}
+
+.future h3,
+.future h4 {
+	color: #1f3e5a;
+	text-align: center;
+	font-size: 28px;
+	font-weight: 600;
+	letter-spacing: -0.84px;
+}
+
+.future picture {
+	display: flex;
+	justify-content: center;
+}
+
+.future p {
+	color: #4c5862;
+	text-align: center;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 28px; /* 175% */
+	letter-spacing: 0.5px;
+	max-width: 90%;
+	margin: auto;
+}
+
+/* ------------- Aside -------------- */
+
+.future aside {
+	margin-top: 273px;
+	background: center -240px/160% url(./images/bg-pattern-circles.svg) no-repeat,
+		linear-gradient(135deg, #2d2e40 0%, #3f4164 100%);
+	border-radius: 0 100px;
+	max-height: 625px;
+	padding: 0 12px;
+	margin-bottom: 80px;
+}
+.future .illustration {
+	position: relative;
+	top: -150px;
+}
+.future .illustration img {
+	width: 100%;
+}
+
+.future .aside-text {
+	position: relative;
+	top: -200px;
+}
+
+.future .aside-text h4 {
+	font-size: 40px;
+	color: white;
+	font-weight: 600;
+	letter-spacing: -1.2px;
+	margin-bottom: 24px;
+}
+
+.future .aside-text p {
+	color: white;
+	line-height: 28px; /* 175% */
+	letter-spacing: 0.5px;
+	font-size: 16px;
+	font-weight: 300;
+}
+
+/* -------------------------------- Footer -------------------------------- */
+
+footer {
+	background-color: #24242c;
+	border-radius: 0 100px 0 0;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	margin-top: 100px;
+	padding: 75px 0;
+}
+
+footer img {
+	margin-bottom: 72px;
+}
+
+footer h4 {
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 33px; /* 183.333% */
+}
+
+footer div ul {
+	margin: 0;
+	list-style-type: none;
+	padding: 0;
+	line-height: 33px; /* 183.333% */
+	font-size: 18px;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+footer div ul li {
+	opacity: 0.75;
+	cursor: pointer;
+}
+
+footer div ul li:hover {
+	opacity: 1;
 }
