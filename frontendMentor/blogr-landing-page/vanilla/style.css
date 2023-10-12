@@ -1,136 +1,139 @@
 @import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oxygen&family=Oxygen+Mono&display=swap");
-
 /* -------------------------------- MOBILE -------------------------------- */
-
 /* -------------------------------- GLOBAL -------------------------------- */
-
 * {
 	box-sizing: border-box;
 }
 
 body {
-	background: #fafafa;
 	font-family: "Overpass", sans-serif;
+	background: #FAFAFA;
 }
 
 button {
-	background-color: transparent;
-	border: none;
 	font-family: inherit;
 	font-size: inherit;
-	font-style: inherit;
 	font-weight: inherit;
+	font-style: inherit;
 	line-height: inherit;
 	padding: 0;
+	border: none;
+	background-color: transparent;
 }
 
 .hide {
 	position: absolute;
-	left: -9999px;
 	top: -9999px;
+	left: -9999px;
 }
 
 .button {
-	border-radius: 28px;
 	font-family: Ubuntu, sans-serif;
 	font-size: 16px;
 	font-weight: 700;
-	padding: 15px 16px;
-	text-decoration: none;
-	text-align: center;
 	max-width: 137px;
+	padding: 15px 16px;
 	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 28px;
 }
 
 .button-white {
-	background-color: white;
-	color: #ff505c;
 	transition: all 0.1s ease-in-out;
+	color: #FF505C;
+	background-color: white;
 }
 
 .button-white:hover {
-	background-color: #ff7b86;
-	color: white;
 	transition: all 0.1s ease-in-out;
+	color: white;
+	background-color: #FF7B86;
 }
 
 .button-color {
-	background: linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%);
-	color: white;
 	font-size: 16px;
 	transition: all 0.1s ease-in-out;
+	color: white;
+	background: linear-gradient(135deg, #FF8F71 0%, #FF3E55 100%);
 }
 
 .button-color:hover {
-	background: white;
-	color: #ff7b86;
 	transition: all 0.1s ease-in-out;
+	color: #FF7B86;
+	background: white;
 }
 
 .button-blank {
-	border: 1px solid #fff;
-	color: white;
 	font-size: 16px;
 	transition: all 0.1s ease-in-out;
+	color: white;
+	border: 1px solid #FFF;
 }
 
 .button-blank:hover {
-	background-color: #fff;
-	color: #ff7b86;
 	transition: all 0.1s ease-in-out;
+	color: #FF7B86;
+	background-color: #FFF;
 }
 
 /* -------------------------------- BURGER -------------------------------- */
-
 .burger {
-	height: 36px;
 	width: 64px;
-	padding: 0 16px;
+	height: 48px;
+	padding: 16px 16px 0;
 	cursor: pointer;
 }
 
 .bar {
-	height: 2px;
 	width: 32px;
-	background-color: #fff;
+	height: 2px;
+	background-color: #FFF;
 }
 
 .bar:nth-child(1) {
-	transition: transform 0.2s linear;
+	position: relative;
+	top: 0;
+	transition: all 0.2s linear, top 0.2s 0.2s linear;
 }
 
 .bar:nth-child(2) {
 	margin: 6px auto;
-	transition: margin 0.2s 0.2s linear, background-color 0s 0.2s linear;
+	transition: margin 0.2s 0.2s linear,
+	background-color 0s 0.2s linear;
 }
 
 .bar:nth-child(3) {
-	transition: transform 0.2s linear;
+	transition: transform 0.2s linear, top 0.2s 0.2s linear;
+	position: relative;
+	top: 0;
 }
 
 .toggle .bar:nth-child(2) {
-	margin: -2px auto;
+	transition: background-color 0s 0.2s linear;
 	background-color: transparent;
-	transition: margin 0.2s linear, background-color 0s 0.2s linear;
 }
+
 .toggle .bar:nth-child(1) {
+	top: 8px;
+	transition: top 0.2s linear, transform 0.2s 0.2s linear;
 	transform: rotate(45deg);
-	transition: transform 0.2s 0.2s linear;
 }
+
 .toggle .bar:nth-child(3) {
+	top: -8px;
+	transition: transform 0.2s 0.2s linear, top 0.2s linear;
 	transform: rotate(-45deg);
-	transition: transform 0.2s 0.2s linear;
 }
 
 /* -------------------------------- HEADER -------------------------------- */
-
 .header {
-	z-index: 2;
-	color: #fff;
-	width: 100vw;
-	background-color: transparent;
 	position: absolute;
+	z-index: 2;
 	top: 56px;
+	width: 100vw;
+	color: #FFF;
+	background-color: transparent;
 }
 
 .header nav {
@@ -142,60 +145,61 @@ button {
 }
 
 /* ------------- Dropdown -------------- */
-
 .dropdown-links {
-	background-color: #fff;
-	padding: 15px;
-	width: 90%;
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	width: 90%;
+	padding: 15px;
 	transform: translate(-50%, 45px);
 	border-radius: 5px;
+	background-color: #FFF;
 }
 
 .dropdown-links button {
-	color: #1f3e5a;
-	cursor: pointer;
-	margin: 12px auto;
-	position: relative;
 	font-size: 18px;
-	padding: 12px;
+	position: relative;
 	display: flex;
+	margin: 12px auto;
+	padding: 12px;
+	cursor: pointer;
+	color: #1F3E5A;
 }
+
 .dropdown-links button::before {
-	background: url(./images/icon-arrow-dark.svg) no-repeat;
-	content: "";
-	height: 10px;
-	width: 10px;
 	position: absolute;
-	right: -8px;
 	top: 17px;
+	right: -8px;
+	width: 10px;
+	height: 10px;
+	content: "";
 	transition: transform 0.1s linear;
+	background: url(./images/icon-arrow-dark.svg) no-repeat;
 }
 
 .dropdown-links button:hover::before {
-	transform: rotate(90deg);
 	transition: transform 0.1s linear;
+	transform: rotate(90deg);
 }
 
 .dropdown-links ul {
-	margin: 0 auto;
-	color: #1f3e5a;
 	font-size: 16px;
-	background-color: rgba(151, 151, 151, 0.08);
-	border-radius: 5px;
-	padding: 12px 25px;
 	width: 80%;
+	margin: 0 auto;
+	padding: 12px 25px;
+	color: #1F3E5A;
+	border-radius: 5px;
+	background-color: rgba(151, 151, 151, 0.08);
 }
+
 .dropdown-links li {
-	list-style-type: none;
 	margin-bottom: 12px;
+	list-style-type: none;
 }
 
 .dropdown {
-	visibility: hidden;
 	position: absolute;
+	visibility: hidden;
 }
 
 .dropdown ul {
@@ -208,10 +212,11 @@ button {
 
 .dropdown a {
 	text-decoration: none;
-	color: #1f3e5a;
+	color: #1F3E5A;
 }
+
 .dropdown a:hover {
-	color: #2a89dd;
+	color: #2A89DD;
 }
 
 .active {
@@ -224,15 +229,14 @@ button {
 }
 
 .connection ul {
-	background-color: transparent;
-	margin: auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	margin: 24px auto 0;
+	padding: 24px 0;
 	text-align: center;
-	border-top: 1px solid #e8e4e4;
-	margin-top: 24px;
-	padding: 24px 0px;
+	border-top: 1px solid #E8E4E4;
+	background-color: transparent;
 }
 
 .connection ul li:first-child {
@@ -240,77 +244,77 @@ button {
 }
 
 .connection ul a {
-	color: inherit;
 	text-decoration: none;
+	color: inherit;
 }
+
 .connection ul a:hover {
-	color: #2a89dd;
+	color: #2A89DD;
 }
 
 .connection ul .button {
-	margin: auto;
 	min-width: 137px;
+	margin: auto;
 }
 
 /* -------------------------------- Hero -------------------------------- */
-
 .hero {
-	background: -400px url(../images/bg-pattern-intro-mobile.svg),
-		linear-gradient(135deg, #ff8f71 20%, #ff3e55 120%);
+	background: -400px url(./images/bg-pattern-intro-mobile.svg),
+	linear-gradient(135deg, #FF8F71 20%, #FF3E55 120%);
 }
 
 .hero {
 	/* background: -300px url(../images/bg-pattern-intro-desktop.svg),
 		linear-gradient(135deg, #ff8f71 0%, #ff3e55 100%); */
-	height: 600px;
-	width: 100%;
-	border-radius: 0px 0px 0px 100px;
 	display: flex;
-	justify-content: center;
 	align-items: center;
-	flex-wrap: wrap;
 	flex-direction: column;
-	padding-top: 40px;
-	color: #fff;
-	padding: 0 24px;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+	height: 600px;
+	padding: 40px 24px 0;
+	color: #FFF;
+	border-radius: 0 0 0 100px;
 }
 
 .hero h2 {
-	font-weight: 600;
 	font-size: 36px;
+	font-weight: 600;
+	font-style: normal;
+	line-height: normal;
+	margin: -2px 10px;
 	text-align: center;
 	letter-spacing: -1.08px;
-	line-height: normal;
-	font-style: normal;
-	margin: -2px 10px;
 }
+
 .hero p {
 	font-size: 18px;
 	font-weight: 400;
 	text-align: center;
 }
+
 .hero .buttons {
-	margin-top: 38px;
 	display: flex;
-	gap: 20px 20px;
 	flex-wrap: wrap;
+	margin-top: 38px;
+	gap: 20px 20px;
+	justify-content: center;
 }
 
 /* -------------------------------- Sections -------------------------------- */
-
 /* ------------- Future -------------- */
-
 .future {
 	margin-top: 100px;
 }
 
 .future h3,
 .future h4 {
-	color: #1f3e5a;
-	text-align: center;
 	font-size: 28px;
 	font-weight: 600;
+	text-align: center;
 	letter-spacing: -0.84px;
+	color: #1F3E5A;
 }
 
 .future picture {
@@ -319,34 +323,37 @@ button {
 }
 
 .future p {
-	color: #4c5862;
-	text-align: center;
 	font-size: 16px;
-	font-style: normal;
 	font-weight: 400;
+	font-style: normal;
 	line-height: 28px; /* 175% */
-	letter-spacing: 0.5px;
 	max-width: 90%;
 	margin: auto;
+	text-align: center;
+	letter-spacing: 0.5px;
+	color: #4C5862;
 }
 
 /* ------------- Aside -------------- */
-
 .future aside {
-	margin-top: 273px;
-	background: center -240px/160% url(./images/bg-pattern-circles.svg) no-repeat,
-		linear-gradient(135deg, #2d2e40 0%, #3f4164 100%);
-	border-radius: 0 100px;
 	max-height: 625px;
-	padding: 0 12px;
+	margin-top: 273px;
 	margin-bottom: 80px;
+	padding: 0 12px;
+	border-radius: 0 100px;
+	background: center -240px/160% url(./images/bg-pattern-circles.svg) no-repeat,
+	linear-gradient(135deg, #2D2E40 0%, #3F4164 100%);
 }
+
 .future .illustration {
 	position: relative;
 	top: -150px;
+	display: flex;
+	justify-content: center;
 }
+
 .future .illustration img {
-	width: 100%;
+	width: 375px;
 }
 
 .future .aside-text {
@@ -356,32 +363,31 @@ button {
 
 .future .aside-text h4 {
 	font-size: 40px;
-	color: white;
 	font-weight: 600;
-	letter-spacing: -1.2px;
 	margin-bottom: 24px;
+	letter-spacing: -1.2px;
+	color: white;
 }
 
 .future .aside-text p {
-	color: white;
-	line-height: 28px; /* 175% */
-	letter-spacing: 0.5px;
 	font-size: 16px;
 	font-weight: 300;
+	line-height: 28px; /* 175% */
+	letter-spacing: 0.5px;
+	color: white;
 }
 
 /* -------------------------------- Footer -------------------------------- */
-
 footer {
-	background-color: #24242c;
-	border-radius: 0 100px 0 0;
-	color: white;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	text-align: center;
 	margin-top: 100px;
 	padding: 75px 0;
+	text-align: center;
+	color: white;
+	border-radius: 0 100px 0 0;
+	background-color: #24242C;
 }
 
 footer img {
@@ -395,20 +401,209 @@ footer h4 {
 }
 
 footer div ul {
-	margin: 0;
-	list-style-type: none;
-	padding: 0;
-	line-height: 33px; /* 183.333% */
+	font-family: system-ui,
+	-apple-system,
+	BlinkMacSystemFont,
+	"Segoe UI",
+	Roboto,
+	Oxygen,
+	Ubuntu,
+	Cantarell,
+	"Open Sans",
+	"Helvetica Neue",
+	sans-serif;
 	font-size: 18px;
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	line-height: 33px; /* 183.333% */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
 }
 
-footer div ul li {
-	opacity: 0.75;
+footer div ul a {
 	cursor: pointer;
+	transition: border-bottom 0.1s linear;
+	text-decoration: none;
+	opacity: 0.75;
+	color: white;
+	border-bottom: transparent solid 1px;
 }
 
-footer div ul li:hover {
-	opacity: 1;
+footer div ul a:hover {
+	transition: border-bottom 0.1s linear;
+	border-bottom: 1px solid white;
+}
+
+/* -------------------------------- Desktop -------------------------------- */
+@media (min-width: 1050px) {
+	/* -------------------------------- Header -------------------------------- */
+	.links {
+		display: flex;
+	}
+
+	.burger {
+		display: none;
+	}
+
+	.hidden-burger-dropdown {
+		display: inherit;
+	}
+
+	.dropdown-links {
+		display: grid;
+		width: inherit;
+		position: relative;
+		top: -25px;
+		left: inherit;
+		transform: inherit;
+		grid-template-rows: 1fr;
+		grid-template-columns: repeat(12, 1fr);
+		grid-gap: 48px;
+		margin-left: 48px;
+		background-color: transparent;
+	}
+
+	.dropdown-links button {
+		color: white;
+		font-size: 16px;
+	}
+
+	.dropdown-links button::before {
+		background: url("./images/icon-arrow-light.svg") no-repeat;
+	}
+
+	.dropdown-links .connection {
+		grid-column: 10 / span 3;
+	}
+
+	.dropdown-links .connection ul {
+		display: flex;
+		flex-direction: row;
+		padding: 0;
+		border-top: inherit;
+		align-items: center;
+		margin: 0;
+		gap: 10px;
+		width: 100%;
+		height: 100%;
+	}
+
+	.connection ul li {
+		display: inline-block;
+	}
+
+	.connection ul li:first-child {
+		margin-bottom: 0;
+	}
+
+	.connection ul a {
+		color: white;
+	}
+
+	.dropdown-links div {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.dropdown-links ul {
+		background: white;
+		margin: 0 10px;
+		padding: 20px 50px 20px 20px;
+		text-align: left;
+	}
+
+	.dropdown-links .connection ul {
+		background: inherit;
+	}
+
+	.dropdown-links .dropdown {
+		position: absolute;
+		top: 75px;
+	}
+
+	/* -------------------------------- Hero -------------------------------- */
+	.hero {
+		background: -300px url(./images/bg-pattern-intro-desktop.svg),
+		linear-gradient(135deg, #FF8F71 0%, #FF3E55 100%);
+	}
+
+	/* -------------------------------- Sections -------------------------------- */
+	/* ------------------------ Future -------------------------- */
+	.future {
+		overflow: hidden;
+		margin: 0 auto
+	}
+
+	.future h3 {
+		font-size: 40px;
+		margin-top: 150px;
+	}
+
+	.future > div:nth-of-type(1) {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: center;
+		position: relative;
+	}
+
+	.future > div:nth-of-type(1) > div:last-child {
+		flex: 1.5 1 0px;
+		text-align: left;
+	}
+
+	.future > div:nth-of-type(1) p, .future > div:nth-of-type(1) h4 {
+		text-align: left;
+		padding-left: 6rem;
+		padding-right: 50px;
+		margin-left: 0;
+	}
+
+	.future #graph-image {
+		flex: 1 1 0px;
+		position: relative;
+	}
+
+	.future #graph-image img {
+		position: absolute;
+		width: 150%;
+		right: -200px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	/* -------------------- Aside -------------------- */
+	.future aside {
+		background: -300px -600px/80% url(./images/bg-pattern-circles.svg) no-repeat,
+		linear-gradient(135deg, #2D2E40 0%, #3F4164 100%);
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.future .illustration {
+		top: inherit;
+	}
+
+	.future .illustration img {
+		width: 375px;
+	}
+
+	.future .aside-text {
+		top: 0;
+		height: 50%;
+		text-align: left;
+	}
+
+	.future .aside-text p {
+		text-align: left;
+	}
+
+	.future .aside-text h4 {
+		text-align: left;
+		margin-left: 30px;
+		margin-top: 0px;
+	}
 }
