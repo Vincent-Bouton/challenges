@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+	body {
+		@apply text-gunmetal
+	}
+	h1{
+		@apply text-hxl leading-110 font-semibold tracking-[-.2rem];
+	}
+	h2{
+		@apply text-hlg leading-110 font-semibold tracking-[-.15rem]
+	}
+	h3{
+		@apply text-hmd leading-110 font-semibold tracking-[-.075rem]
+	}
+	h4{
+		@apply text-hsm leading-110 font-semibold tracking-[-.0625rem]
+	}
+	p{
+		@apply text-bmd leading-150 font-normal
+	}
+	input[type="number"]{
+		appearance:textfield;
+		min-width: 150px;
+	}
+	input[type='number']:focus{
+		@apply outline-none
+	}
+	label {
+		@apply text-dark-electric-blue text-bsm
+	}
+}
+
+@layer components {
+	.input-container{
+		@apply flex gap-6 items-start py-5 px-6  self-stretch rounded-xl border border-borders bg-pure-white text-hmd font-semibold leading-110 tracking-[-.075rem];
+	}
+	.input-container:focus-within{
+		@apply border-primary
+	}
+	.input-container-span{
+		@apply text-primary my-1
+	}
+}
+
