@@ -2,8 +2,8 @@
 const {field} = Astro.props
 ---
 <label for={field}>{field}</label>
-<div class="input-container mt-2">
-	<input id={field} type="number" class="flex-1" value="" placeholder="0">
-	<span class="input-container-span">{'CM'}</span>
+<div class="input-container mt-2 w-4/5 max-w-[18.75rem]">
+	<input id={field} name={field} type="number"  value="" placeholder="0">
+	<span class="input-container-span ">{'CM'}</span>
 </div>
 

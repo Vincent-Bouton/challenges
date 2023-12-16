@@ -28,6 +28,19 @@
 	input[type='number']:focus{
 		@apply outline-none
 	}
+	input[type='radio']{
+		@apply appearance-none m-0 bg-pure-white text-pure-white w-[1.9375rem] h-[1.9375rem] border border-borders rounded-full;
+		font:inherit;
+	}
+	input[type='radio']:hover{
+		@apply border-primary
+	}
+	input[type='radio']:checked:hover{
+		@apply border-borders
+	}
+	input[type='radio']:checked{
+		@apply bg-primary border-8
+	}
 	label {
 		@apply text-dark-electric-blue text-bsm
 	}
