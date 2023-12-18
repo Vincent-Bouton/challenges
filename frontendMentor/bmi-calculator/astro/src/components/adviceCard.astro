@@ -1,0 +1,14 @@
+---
+const { title, icon, text } = Astro.props;
+import { Image } from "astro:assets";
+---
+
+<article class="flex flex-col-reverse my-6">
+  <div>
+    <h3 class="my-6">{title}</h3>
+    <p class="mr-12">{text}</p>
+  </div>
+  <div>
+    <Image src={icon} alt="" />
+  </div>
+</article>
