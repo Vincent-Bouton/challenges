@@ -57,3 +57,9 @@
     @apply text-primary my-1;
   }
 }
+
+.shadow-card {
+  border-radius: 16px;
+  background: var(--Pure-White, #fff);
+  box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+}

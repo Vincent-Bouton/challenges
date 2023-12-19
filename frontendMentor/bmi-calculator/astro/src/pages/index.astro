@@ -28,7 +28,7 @@ import {
     <title>BMI Calculator</title>
   </head>
   <body>
-    <main class="container px-6">
+    <main class="container px-6 mx-auto">
       <!-- Hero -->
       <div>
         <Image src={logo} alt="Logo BMI Calculator" />
@@ -43,16 +43,23 @@ import {
         <BmiCard />
       </div>
       <section>
-        <h2>What your BMI result means</h2>
-        <p>
-          A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
-          Maintaining a healthy weight may lower your chances of experiencing
-          health issues later on, such as obesity and type 2 diabetes. Aim for a
-          nutritious diet with reduced fat and sugar content, incorporating
-          ample fruits and vegetables. Additionally, strive for regular physical
-          activity, ideally about 30 minutes daily for five days a week.
-        </p>
-        <Image src={manEating} alt="Man smilling while eating sushi" />
+        <div class="flex flex-col-reverse">
+          <div>
+            <h2 class="my-10 text-hlg">What your BMI result means</h2>
+            <p>
+              A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
+              Maintaining a healthy weight may lower your chances of
+              experiencing health issues later on, such as obesity and type 2
+              diabetes. Aim for a nutritious diet with reduced fat and sugar
+              content, incorporating ample fruits and vegetables. Additionally,
+              strive for regular physical activity, ideally about 30 minutes
+              daily for five days a week.
+            </p>
+          </div>
+          <div class="w-screen ml-[-1.5rem]">
+            <Image src={manEating} alt="Man smilling while eating sushi" />
+          </div>
+        </div>
         <div class="mt-32">
           <AdviceCard
             title="Healthy eating"
@@ -73,15 +80,15 @@ import {
           />
         </div>
       </section>
-      <section>
-        <h2>Limitations of BMI</h2>
+      <section class="text-center my-20">
+        <h2 class="text-hlg my-8">Limitations of BMI</h2>
         <p>
           Although BMI is often a practical indicator of healthy weight, it is
           not suited for every person. Specific groups should carefully consider
           their BMI outcomes, and in certain cases, the measurement may not be
           beneficial to use.
         </p>
-        <div>
+        <div class="my-14">
           <InfoCard
             title="Gender"
             text="The development and body fat composition of girls and boys vary with age. Consequently, a child's age and gender are considered when evaluating their BMI."

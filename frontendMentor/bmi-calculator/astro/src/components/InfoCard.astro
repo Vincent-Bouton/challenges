@@ -3,8 +3,10 @@ import { Image } from "astro:assets";
 const { title, text, icon } = Astro.props;
 ---
 
-<article>
-  <h3>{title}</h3>
-  <p>{text}</p>
-  <Image src={icon} alt="" />
+<article class="p-4 shadow-card rounded my-4">
+  <div class="flex justify-start gap-4 items-center mb-5">
+    <h3 class="order-2 text-hsm">{title}</h3>
+    <Image class="order-1" src={icon} alt="" />
+  </div>
+  <p class="text-left">{text}</p>
 </article>
