@@ -1,133 +1,150 @@
 ---
 import "@fontsource/inter";
 import "../styles/style.css";
-import BmiCard from "../components/BmiCard.astro";
+import BmiCard from "../components/BmiCard.jsx";
 import AdviceCard from "../components/adviceCard.astro";
 import InfoCard from "../components/InfoCard.astro";
-import { Image } from "astro:assets";
+import {Image} from "astro:assets";
 import {
-  iconAge,
-  iconEating,
-  iconExercise,
-  iconGender,
-  iconMuscle,
-  iconSleep,
-  iconPregnancy,
-  iconRace,
-  logo,
-  manEating,
+	iconAge,
+	iconEating,
+	iconExercise,
+	iconGender,
+	iconMuscle,
+	iconSleep,
+	iconPregnancy,
+	iconRace,
+	logo,
+	manEating,
 } from "../images";
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>BMI Calculator</title>
-  </head>
-  <body>
-    <main class="container px-6 mx-auto">
-      <!-- Hero -->
-      <div>
-        <Image src={logo} alt="Logo BMI Calculator" />
-        <h1>Body Mass Index Calculator</h1>
-        <p>
-          Better understand your weight in relation to your height using our
-          body mass index (BM) calculator. While BMI is not the sole determinant
-          of a healthy weight, it offers a valuable starting point to evaluate
-          your overall health and well-being.
-        </p>
-        <!-- BMI Card -->
-        <BmiCard />
-      </div>
-      <section>
-        <div class="flex flex-col-reverse md:flex-row-reverse md:items-center md:justify-around gap-7">
-          <div class="max-w-[465px] flex-1">
-            <h2 class="my-10 text-hlg">What your BMI result means</h2>
-            <p>
-              A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
-              Maintaining a healthy weight may lower your chances of
-              experiencing health issues later on, such as obesity and type 2
-              diabetes. Aim for a nutritious diet with reduced fat and sugar
-              content, incorporating ample fruits and vegetables. Additionally,
-              strive for regular physical activity, ideally about 30 minutes
-              daily for five days a week.
-            </p>
-          </div>
-          <div class="w-screen ml-[-1.5rem] lg:max-w-[564px] flex-1">
-            <Image src={manEating} alt="Man smilling while eating sushi" />
-          </div>
-        </div>
-        <div class="mt-32 flex flex-wrap justify-between">
-          <AdviceCard
-            title="Healthy eating"
-            text="Healthy eating promotes weight control, disease prevention, better digestion, immunity, mental clarity, and mood."
-            icon={iconEating}
-          />
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+		<meta name="viewport" content="width=device-width"/>
+		<meta name="generator" content={Astro.generator}/>
+		<title>BMI Calculator</title>
+	</head>
+	<body>
+		<main class="container px-6 mx-auto">
+			<!-- Hero -->
+			<div>
+				<Image src={logo} alt="Logo BMI Calculator"/>
+				<h1>Body Mass Index Calculator</h1>
+				<p>
+					Better understand your weight in relation to your height using our
+					body mass index (BM) calculator. While BMI is not the sole determinant
+					of a healthy weight, it offers a valuable starting point to evaluate
+					your overall health and well-being.
+				</p>
+				<!-- BMI Card -->
+				<section>
+					<BmiCard client:load/>
+				</section>
 
-          <AdviceCard
-            title="Regular exercise"
-            text="Exercise improves fitness, aids weight control, elevates mood, and reduces disease risk, fostering wellness and longevity."
-            icon={iconExercise}
-          />
+			</div>
+			<section>
+				<div
+					class="flex flex-col-reverse md:flex-row-reverse md:items-center md:justify-around gap-7"
+				>
+					<div class="max-w-[465px] flex-1">
+						<h2 class="my-10 text-hlg">What your BMI result means</h2>
+						<p>
+							A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
+							Maintaining a healthy weight may lower your chances of
+							experiencing health issues later on, such as obesity and type 2
+							diabetes. Aim for a nutritious diet with reduced fat and sugar
+							content, incorporating ample fruits and vegetables. Additionally,
+							strive for regular physical activity, ideally about 30 minutes
+							daily for five days a week.
+						</p>
+					</div>
+					<div class="w-screen ml-[-1.5rem] lg:max-w-[564px] flex-1">
+						<Image src={manEating} alt="Man smilling while eating sushi"/>
+					</div>
+				</div>
+				<div class="mt-32 flex flex-wrap justify-between">
+					<AdviceCard
+						title="Healthy eating"
+						text="Healthy eating promotes weight control, disease prevention, better digestion, immunity, mental clarity, and mood."
+						icon={iconEating}
+					/>
 
-          <AdviceCard
-            title="Adequate sleep"
-            text="Healthy eating promotes weight control, disease prevention, better digestion, immunity, mental clarity, and mood."
-            icon={iconSleep}
-          />
-        </div>
-      </section>
-      <section class="text-center my-20 xl:text-left xl:grid xl:grid-cols-5 xl:gap-10">
-        <div class="col-span-2">
-          <h2 class="text-hlg my-8">Limitations of BMI</h2>
-          <p>
-            Although BMI is often a practical indicator of healthy weight, it is
-            not suited for every person. Specific groups should carefully consider
-            their BMI outcomes, and in certain cases, the measurement may not be
-            beneficial to use.
-          </p>
-        </div>
-        <div class="my-14 md:grid md:grid-cols-12 md:gap-8 md:auto-rows-min xl:col-span-3">
-          <div class="md:col-span-6 md:row-start-1 xl:col-span-5 xl:col-start-4">
-            <InfoCard
-                title="Gender"
-                text="The development and body fat composition of girls and boys vary with age. Consequently, a child's age and gender are considered when evaluating their BMI."
-                icon={iconGender}
-            />
-          </div>
-          <div class="md:col-span-6 md:row-start-1 xl:row-start-2 xl:translate-x-[-10rem]">
-            <InfoCard
-                title="Age"
-                text="In aging individuals, increased body fat and muscle loss may cause BMI to underestimate body fat content."
-                icon={iconAge}
-            />
-          </div>
-          <div class="md:col-span-6 md:row-start-2 xl:translate-x-[-10rem]">
-            <InfoCard
-                title="Muscle"
-                text="BMI may misclassify muscular individuals as overweight or obese, as it doesn't differentiate muscle from fat."
-                icon={iconMuscle}
-            />
-          </div>
-          <div class="md:col-span-6 md:row-start-2 xl:row-start-3 xl:translate-x-[-20rem]">
-            <InfoCard
-                title="Pregnancy"
-                text="Expectant mothers experience weight gain due to their growing baby. Maintaining a healthy pre-pregnancy BMI is advisable to minimise health risks for both mother and child."
-                icon={iconPregnancy}
-            />
-          </div>
-          <div class="md:col-span-6 md:col-start-4 md:row-start-3 xl:col-start-7 xl:translate-x-[-20rem]">
-            <InfoCard
-                title="Race"
-                text="Certain health concerns may affect individuals of some Black and Asian origins at lower BMIs than others. To learn more, it is advised to discuss this with your GP or practice nurse."
-                icon={iconRace}
-            />
-          </div>
-        </div>
-      </section>
-    </main>
-  </body>
+					<AdviceCard
+						title="Regular exercise"
+						text="Exercise improves fitness, aids weight control, elevates mood, and reduces disease risk, fostering wellness and longevity."
+						icon={iconExercise}
+					/>
+
+					<AdviceCard
+						title="Adequate sleep"
+						text="Healthy eating promotes weight control, disease prevention, better digestion, immunity, mental clarity, and mood."
+						icon={iconSleep}
+					/>
+				</div>
+			</section>
+			<section
+				class="text-center my-20 xl:text-left xl:grid xl:grid-cols-5 xl:gap-10"
+			>
+				<div class="col-span-2">
+					<h2 class="text-hlg my-8">Limitations of BMI</h2>
+					<p>
+						Although BMI is often a practical indicator of healthy weight, it is
+						not suited for every person. Specific groups should carefully
+						consider their BMI outcomes, and in certain cases, the measurement
+						may not be beneficial to use.
+					</p>
+				</div>
+				<div
+					class="my-14 md:grid md:grid-cols-12 md:gap-8 md:auto-rows-min xl:col-span-3"
+				>
+					<div
+						class="md:col-span-6 md:row-start-1 xl:col-span-5 xl:col-start-4"
+					>
+						<InfoCard
+							title="Gender"
+							text="The development and body fat composition of girls and boys vary with age. Consequently, a child's age and gender are considered when evaluating their BMI."
+							icon={iconGender}
+						/>
+					</div>
+					<div
+						class="md:col-span-6 md:row-start-1 xl:row-start-2 xl:translate-x-[-10rem]"
+					>
+						<InfoCard
+							title="Age"
+							text="In aging individuals, increased body fat and muscle loss may cause BMI to underestimate body fat content."
+							icon={iconAge}
+						/>
+					</div>
+					<div class="md:col-span-6 md:row-start-2 xl:translate-x-[-10rem]">
+						<InfoCard
+							title="Muscle"
+							text="BMI may misclassify muscular individuals as overweight or obese, as it doesn't differentiate muscle from fat."
+							icon={iconMuscle}
+						/>
+					</div>
+					<div
+						class="md:col-span-6 md:row-start-2 xl:row-start-3 xl:translate-x-[-20rem]"
+					>
+						<InfoCard
+							title="Pregnancy"
+							text="Expectant mothers experience weight gain due to their growing baby. Maintaining a healthy pre-pregnancy BMI is advisable to minimise health risks for both mother and child."
+							icon={iconPregnancy}
+						/>
+					</div>
+					<div
+						class="md:col-span-6 md:col-start-4 md:row-start-3 xl:col-start-7 xl:translate-x-[-20rem]"
+					>
+						<InfoCard
+							title="Race"
+							text="Certain health concerns may affect individuals of some Black and Asian origins at lower BMIs than others. To learn more, it is advised to discuss this with your GP or practice nurse."
+							icon={iconRace}
+						/>
+					</div>
+				</div>
+			</section>
+		</main>
+	</body>
 </html>
