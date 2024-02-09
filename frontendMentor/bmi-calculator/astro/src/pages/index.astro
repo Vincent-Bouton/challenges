@@ -31,18 +31,25 @@ import {
 		<main class="container px-6 mx-auto">
 			<!-- Hero -->
 			<div>
-				<Image src={logo} alt="Logo BMI Calculator"/>
-				<h1>Body Mass Index Calculator</h1>
-				<p>
-					Better understand your weight in relation to your height using our
-					body mass index (BM) calculator. While BMI is not the sole determinant
-					of a healthy weight, it offers a valuable starting point to evaluate
-					your overall health and well-being.
-				</p>
-				<!-- BMI Card -->
-				<section>
-					<BmiCard client:load/>
-				</section>
+				<div class="hero__background-gradient"></div>
+				<Image class="mx-auto" src={logo} alt="Logo BMI Calculator"/>
+				<div class="flex flex-wrap justify-center text-center">
+					<div>
+						<h1 class="my-6">Body Mass Index Calculator</h1>
+						<p>
+							Better understand your weight in relation to your height using our
+							body mass index (BM) calculator. While BMI is not the sole
+							determinant of a healthy weight, it offers a valuable starting
+							point to evaluate your overall health and well-being.
+						</p>
+					</div>
+
+					<!-- BMI Card -->
+					<section>
+						<BmiCard client:load/>
+					</section>
+				</div>
+
 
 			</div>
 			<section>

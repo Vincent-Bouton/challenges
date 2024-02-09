@@ -1,65 +1,83 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer base {
-  body {
-    @apply text-gunmetal;
-  }
-  h1 {
-    @apply text-hxl leading-110 font-semibold tracking-[-.2rem];
-  }
-  h2 {
-    @apply text-hlg leading-110 font-semibold tracking-[-.15rem];
-  }
-  h3 {
-    @apply text-hmd leading-110 font-semibold tracking-[-.075rem];
-  }
-  h4 {
-    @apply text-hsm leading-110 font-semibold tracking-[-.0625rem];
-  }
-  p {
-    @apply text-bmd leading-150 font-normal text-dark-electric-blue;
-  }
-  input[type="number"] {
-    appearance: textfield;
-    min-width: 150px;
-  }
-  input[type="number"]:focus {
-    @apply outline-none;
-  }
-  input[type="radio"] {
-    @apply appearance-none m-0 bg-pure-white text-pure-white w-[1.9375rem] h-[1.9375rem] border border-borders rounded-full;
-    font: inherit;
-  }
-  input[type="radio"]:hover {
-    @apply border-primary;
-  }
-  input[type="radio"]:checked:hover {
-    @apply border-borders;
-  }
-  input[type="radio"]:checked {
-    @apply bg-primary border-8;
-  }
-  label {
-    @apply text-dark-electric-blue text-bsm;
-  }
+	body {
+		@apply text-gunmetal;
+	}
+
+	h1 {
+		@apply text-hxl leading-110 font-semibold tracking-[-.2rem];
+	}
+
+	h2 {
+		@apply text-hlg leading-110 font-semibold tracking-[-.15rem];
+	}
+
+	h3 {
+		@apply text-hmd leading-110 font-semibold tracking-[-.075rem];
+	}
+
+	h4 {
+		@apply text-hsm leading-110 font-semibold tracking-[-.0625rem];
+	}
+
+	p {
+		@apply text-bmd leading-150 font-normal text-dark-electric-blue;
+	}
+
+	input[type="number"] {
+		appearance: textfield;
+		min-width: 150px;
+	}
+
+	input[type="number"]:focus {
+		@apply outline-none;
+	}
+
+	input[type="radio"] {
+		@apply appearance-none m-0 bg-pure-white text-pure-white w-[1.9375rem] h-[1.9375rem] border border-borders rounded-full;
+		font: inherit;
+	}
+
+	input[type="radio"]:hover {
+		@apply border-primary;
+	}
+
+	input[type="radio"]:checked:hover {
+		@apply border-borders;
+	}
+
+	input[type="radio"]:checked {
+		@apply bg-primary border-8;
+	}
+
+	label {
+		@apply text-dark-electric-blue text-bsm;
+	}
 }
 
 @layer components {
-  .input-container {
-    @apply flex gap-6 items-start py-5 px-6  self-stretch rounded-xl border border-borders bg-pure-white text-hmd font-semibold leading-110 tracking-[-.075rem];
-  }
-  .input-container:focus-within {
-    @apply border-primary;
-  }
-  .input-container-span {
-    @apply text-primary my-1;
-  }
+	.input-container {
+		@apply flex gap-6 items-start py-5 px-6  self-stretch rounded-xl border border-borders bg-pure-white text-hmd font-semibold leading-110 tracking-[-.075rem];
+	}
+
+	.input-container:focus-within {
+		@apply border-primary;
+	}
+
+	.input-container-span {
+		@apply text-primary my-1;
+	}
 }
 
 .shadow-card {
-  border-radius: 16px;
-  background: var(--Pure-White, #fff);
-  box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+	border-radius: 16px;
+	background: var(--Pure-White, #FFF);
+	box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+}
+
+.hero__background-gradient {
+	background: rgb(9, 9, 121);
+	background: linear-gradient(135deg, rgba(9, 9, 121, 0) 0%, rgba(214, 230, 254, 1) 100%);
 }
