@@ -28,7 +28,7 @@
 
 	input[type="number"] {
 		appearance: textfield;
-		min-width: 150px;
+		width: 75%;
 	}
 
 	input[type="number"]:focus {
