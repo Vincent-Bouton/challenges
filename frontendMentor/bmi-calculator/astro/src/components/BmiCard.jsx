@@ -25,16 +25,20 @@ const BmiCard = () => {
     );
   };
 
-  const [bmiMessage, setBmiMessage] = useState(
-      <div className="text-pure-white md:flex justify-between items-center">
-        <p
-          className="text-hmd md:text-hlg mb-2 text-pure-white flex-1 md:pl-6"
-        >Welcome</p>
-        <p className="text-pure-white flex-1">Enter your height and weight and
-          you'll see your BMI result here</p>
-      </div>
-    )
-  ;
+  const welcomeMessage = (
+    <div className="text-pure-white  ">
+      <p
+        className="text-hmd mb-2 text-pure-white"
+      >
+        Welcome!
+      </p>
+      <p className="text-pure-white">
+        Enter your height and weight and you'll see your BMI result here
+      </p>
+    </div>
+  );
+
+  const [bmiMessage, setBmiMessage] = useState(welcomeMessage);
   const [healthyWeight, setHealthyWeight] = useState("0 - 0 KG");
 
   const onMeasureChange = (e) => {
@@ -49,11 +53,20 @@ const BmiCard = () => {
       // bmi  to number
       bmi = Number(bmi);
       if (isNaN(bmi)) {
+        setBmiMessage(welcomeMessage);
         return;
+
       }
       if (bmi > 100) {
+        setBmiMessage(welcomeMessage);
         return;
       }
+      if (bmi === 0) {
+        setBmiMessage(welcomeMessage);
+        return;
+
+      }
+
       if (bmi > 0 && bmi < 18.5) {
         setBmiMessage(yourBmiIs(bmi, "underweight"));
       }
@@ -106,8 +119,8 @@ const BmiCard = () => {
               onChange={onMeasureChange}
 
             />
-            <span className="ml-3">
-              metric
+            <span className="ml-3 font-bold">
+              Metric
 
             </span>
           </label>
@@ -117,8 +130,8 @@ const BmiCard = () => {
               checked={measure === "imperial"}
               onChange={onMeasureChange}
             />
-            <span className="ml-3">
-              imperial
+            <span className="ml-3 font-bold">
+              Imperial
             </span>
           </label>
         </div>

@@ -79,7 +79,7 @@
 
 .hero__background-gradient {
 	background: rgb(9, 9, 121);
-	background: linear-gradient(135deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 1) 0%, hsla(216, 95%, 92%, 1) 55%);
+	background: linear-gradient(135deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 1) 0%, hsla(216, 95%, 92%, 1) 43%);
 	background-repeat: no-repeat;
 	position: absolute;
 	max-width: 100vw;
