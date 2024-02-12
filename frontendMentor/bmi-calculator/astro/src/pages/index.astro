@@ -28,14 +28,19 @@ import {
 		<title>BMI Calculator</title>
 	</head>
 	<body>
+		<div
+			class="hero__background-gradient rounded-3xl md:m-4 h-full w-screen xl:max-w-[75vw] sm:max-h-[75%]"
+		></div>
 		<main class="container px-6 mx-auto">
 			<!-- Hero -->
-			<div>
-				<div class="hero__background-gradient"></div>
-				<Image class="mx-auto" src={logo} alt="Logo BMI Calculator"/>
-				<div class="flex flex-wrap">
-					<div class="text-center">
-						<h1 class="my-6">Body Mass Index Calculator</h1>
+			<div class="min-h-[75vh]">
+				<Image class="mx-auto pt-8" src={logo} alt="Logo BMI Calculator"/>
+				<div
+					class="flex flex-wrap xl:flex-nowrap lg:gap-x-12 lg:items-center mt-8"
+				>
+					<div class="text-center xl:flex-1 lg:-translate-y-12 lg:px-6">
+						<h1 class="my-6 text-hlg sm:text-hxl">Body Mass Index
+							Calculator</h1>
 						<p>
 							Better understand your weight in relation to your height using our
 							body mass index (BM) calculator. While BMI is not the sole
@@ -43,9 +48,8 @@ import {
 							point to evaluate your overall health and well-being.
 						</p>
 					</div>
-
 					<!-- BMI Card -->
-					<section>
+					<section class="mx-auto xl:flex-1">
 						<BmiCard client:load/>
 					</section>
 				</div>
