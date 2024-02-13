@@ -6,7 +6,7 @@ const BmiCard = () => {
   const [weightMetric, setWeightMetric] = useState("");
   const [bmiValue, setBmiValue] = useState("");
 
-  const yourBmiIs = (bmi, condition) => {
+  const yourBmiIs = (bmi, condition, healthyWeight) => {
     return (
       <div
         className="text-pure-white md:flex justify-between items-center p-2"
@@ -39,17 +39,17 @@ const BmiCard = () => {
   );
 
   const [bmiMessage, setBmiMessage] = useState(welcomeMessage);
-  const [healthyWeight, setHealthyWeight] = useState("0 - 0 KG");
 
   const onMeasureChange = (e) => {
     setMeasure(e.target.value);
   };
 
-  const getBmiValue = (height, weight) => {
+  const getBmiValue = (height, weight, healthyWeight) => {
     let bmi;
     if (measure === "metric") {
       bmi = (weight / (height / 100) ** 2).toFixed(1);
       console.log(typeof bmi, bmi);
+      console.log(healthyWeight);
       // bmi  to number
       bmi = Number(bmi);
       if (isNaN(bmi)) {
@@ -66,18 +66,17 @@ const BmiCard = () => {
         return;
 
       }
-
       if (bmi > 0 && bmi < 18.5) {
-        setBmiMessage(yourBmiIs(bmi, "underweight"));
+        setBmiMessage(yourBmiIs(bmi, "underweight", healthyWeight));
       }
       if (bmi >= 18.5 && bmi < 24.9) {
-        setBmiMessage(yourBmiIs(bmi, "healthy"));
+        setBmiMessage(yourBmiIs(bmi, "healthy", healthyWeight));
       }
       if (bmi >= 25 && bmi < 29.9) {
-        setBmiMessage(yourBmiIs(bmi, "overweight"));
+        setBmiMessage(yourBmiIs(bmi, "overweight", healthyWeight));
       }
       if (bmi >= 30) {
-        setBmiMessage(yourBmiIs(bmi, "obese"));
+        setBmiMessage(yourBmiIs(bmi, "obese", healthyWeight));
       }
 
       return bmi;
@@ -87,24 +86,25 @@ const BmiCard = () => {
 
   // Function to get healthy weight
   const getHealthyWeight = (height) => {
-    let healthyWeight;
+    let calcHealthyWeight;
     if (measure === "metric") {
-      healthyWeight = [
+      console.log(height);
+      calcHealthyWeight = [
         (18.5 * (height / 100) ** 2).toFixed(1),
         (24.9 * (height / 100) ** 2).toFixed(1),
       ];
-      setHealthyWeight(healthyWeight.join(" - "));
+      return `${calcHealthyWeight[0]} - ${calcHealthyWeight[1]} KG`;
     }
   };
   const onHeightMetricChange = (e) => {
     setHeightMetric(e.target.value);
-    setBmiValue(getBmiValue(e.target.value, weightMetric));
-    getHealthyWeight(e.target.value);
+    setBmiValue(getBmiValue(e.target.value, weightMetric, getHealthyWeight(e.target.value)));
   };
 
   const onWeightMetricChange = (e) => {
     setWeightMetric(e.target.value);
-    setBmiValue(getBmiValue(heightMetric, e.target.value));
+    setBmiValue(getBmiValue(heightMetric, e.target.value, getHealthyWeight(heightMetric)));
+
   };
 
   return (
