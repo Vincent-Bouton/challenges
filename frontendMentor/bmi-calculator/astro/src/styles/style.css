@@ -2,87 +2,97 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
-	body {
-		@apply text-gunmetal;
-	}
+    body {
+        @apply text-gunmetal;
+    }
 
-	h1 {
-		@apply text-hxl leading-110 font-semibold tracking-[-.2rem];
-	}
+    h1 {
+        @apply text-hxl leading-110 font-medium  tracking-[-.2rem];
+    }
 
-	h2 {
-		@apply text-hlg leading-110 font-semibold tracking-[-.15rem];
-	}
+    h2 {
+        @apply text-hlg leading-110 font-medium tracking-[-.15rem];
+    }
 
-	h3 {
-		@apply text-hmd leading-110 font-semibold tracking-[-.075rem];
-	}
+    h3 {
+        @apply text-hmd leading-110 font-medium tracking-[-.075rem];
+    }
 
-	h4 {
-		@apply text-hsm leading-110 font-semibold tracking-[-.0625rem];
-	}
+    h4 {
+        @apply text-hsm leading-110 font-medium tracking-[-.0625rem];
+    }
 
-	p {
-		@apply text-bmd leading-150 font-normal text-dark-electric-blue;
-	}
+    p {
+        @apply text-bmd leading-150 font-normal text-dark-electric-blue;
+    }
 
-	input[type="number"] {
-		appearance: textfield;
-		width: 75%;
-	}
+    input[type="number"] {
+        appearance: textfield;
+        width: 75%;
+    }
 
-	input[type="number"]:focus {
-		@apply outline-none;
-	}
+    input[type="number"]:focus {
+        @apply outline-none;
+    }
 
-	input[type="radio"] {
-		@apply appearance-none m-0 bg-pure-white text-pure-white w-[1.9375rem] h-[1.9375rem] border border-borders rounded-full;
-		font: inherit;
-	}
+    input[type="radio"] {
+        @apply appearance-none m-0 bg-pure-white text-pure-white w-[1.9375rem] h-[1.9375rem] border border-borders rounded-full;
+        font: inherit;
+    }
 
-	input[type="radio"]:hover {
-		@apply border-primary;
-	}
+    input[type="radio"]:hover {
+        @apply border-primary;
+    }
 
-	input[type="radio"]:checked:hover {
-		@apply border-borders;
-	}
+    input[type="radio"]:checked:hover {
+        @apply border-borders;
+    }
 
-	input[type="radio"]:checked {
-		@apply bg-primary border-8;
-	}
+    input[type="radio"]:checked {
+        @apply bg-primary border-8;
+    }
 
-	label {
-		@apply text-dark-electric-blue text-bsm;
-	}
+    label {
+        @apply text-dark-electric-blue text-bsm;
+    }
 }
 
 @layer components {
-	.input-container {
-		@apply flex gap-6 items-start py-5 px-6  self-stretch rounded-xl border border-borders bg-pure-white text-hmd font-semibold leading-110 tracking-[-.075rem];
-	}
+    .input-container {
+        @apply flex gap-6 items-start py-5 px-6  self-stretch rounded-xl border border-borders bg-pure-white text-hmd font-semibold leading-110 tracking-[-.075rem];
+    }
 
-	.input-container:focus-within {
-		@apply border-primary;
-	}
+    .input-container:focus-within {
+        @apply border-primary;
+    }
 
-	.input-container-span {
-		@apply text-primary;
-	}
+    .input-container-span {
+        @apply text-primary;
+    }
 }
 
 .shadow-card {
-	border-radius: 16px;
-	background: var(--Pure-White, #FFF);
-	box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+    border-radius: 16px;
+    background: var(--Pure-White, #FFF);
+    box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
 }
 
 .hero__background-gradient {
-	background: rgb(9, 9, 121);
-	background: linear-gradient(135deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 1) 0%, hsla(216, 95%, 92%, 1) 43%);
-	background-repeat: no-repeat;
-	position: absolute;
-	max-width: 100vw;
-	z-index: -1;
+    background: rgb(9, 9, 121);
+    background: linear-gradient(135deg, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 100%, 1) 4%, hsla(216, 100%, 98%, 1) 31%, hsla(215, 100%, 96%, 1) 67%, hsla(216, 95%, 92%, 1) 100%);
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
 }
+
+.arrow {
+    position: relative;
+}
+
+.arrow::before {
+    content: "";
+    position: absolute;
+}
+
+
 

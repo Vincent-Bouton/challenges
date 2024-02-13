@@ -12,7 +12,7 @@ const BmiCard = () => {
         className="text-pure-white md:flex justify-between items-center p-2"
       >
         <p
-          className="text-hmd text-pure-white flex-1 md:pl-6 mb-6 md:mb-2"
+          className="text-hmd font-medium text-pure-white flex-1 md:pl-6 mb-6 md:mb-2"
         >Your BMI is... <span
           className="text-hxl block font-bold mt-2"
         >{bmi}</span>
@@ -26,9 +26,9 @@ const BmiCard = () => {
   };
 
   const welcomeMessage = (
-    <div className="text-pure-white  ">
+    <div className="text-pure-white">
       <p
-        className="text-hmd mb-2 text-pure-white"
+        className="text-hmd font-medium mb-2 text-pure-white"
       >
         Welcome!
       </p>
@@ -168,7 +168,7 @@ const BmiCard = () => {
         ) : (<p>Imperial will be coming soon!</p>)}
       </form>
       <div
-        className="bg-primary text-pure-white p-6 mt-6 text-hmd rounded-xl md:rounded-r-full md:rounded-l-3xl"
+        className="from-primary to-[600%] to-pure-white bg-gradient-to-r text-pure-white p-6 mt-6 text-hmd rounded-xl md:rounded-r-full md:rounded-l-3xl"
       >
         {bmiMessage}
       </div>
