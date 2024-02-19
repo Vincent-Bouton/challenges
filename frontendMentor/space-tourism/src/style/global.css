@@ -31,5 +31,5 @@
     @apply font-barlow-condensed text-subheading-2 text-white font-normal tracking-subheading-2;
 }
 .nav-text{
-    @apply font-barlow-condensed text-nav-text text-white font-normal tracking-nav md:text-[14px] md:tracking-[2.36px];
+    @apply font-barlow-condensed text-nav text-white font-normal tracking-nav md:text-[14px] md:tracking-[2.36px];
 }

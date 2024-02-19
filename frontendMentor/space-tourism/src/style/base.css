@@ -1,5 +1,5 @@
 @layer base {
     p{
-        @apply font-barlow font-body text-primary md:font-body-md sm:font-body-sm;
+        @apply font-barlow text-body text-primary md:text-body-md sm:text-body-sm;
     }
 }
