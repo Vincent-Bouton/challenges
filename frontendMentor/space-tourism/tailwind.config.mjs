@@ -29,6 +29,19 @@ export default {
 			'heading-5' : "4.75px",
 			'subheading-2' : "2.35px",
 			'nav': "2.7px"
+		},
+		screens: {
+			'2xl': {'max': '1535px'},
+			'xl': {'max': '1279px'},
+			'lg': {'max': '1023px'},
+			'md': {'max': '767px'},
+			'sm': {'max': '639px'},
+			// custom
+			'desktop': {'min':'1440px'},
+			'tablet': {'max':'768px'},
+			'mobile': {'max':'375px'}
+
+
 		}
 	},
 	plugins: [],
