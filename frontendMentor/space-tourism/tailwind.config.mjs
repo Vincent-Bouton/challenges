@@ -31,7 +31,7 @@ export default {
 			'nav': "2.7px"
 		},
 		screens: {
-			'2xl': {'max': '1535px'},
+			'2xl': {'max': '1440px'},
 			'xl': {'max': '1279px'},
 			'lg': {'max': '1023px'},
 			'md': {'max': '767px'},
@@ -42,7 +42,7 @@ export default {
 			'mobile': {'max':'375px'}
 
 
-		}
+		},
 	},
 	plugins: [],
 }

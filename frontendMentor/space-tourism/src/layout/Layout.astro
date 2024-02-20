@@ -1,21 +1,22 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import Header from '../components/Header.astro'
-const {title, description} = Astro.props
+const {title, description, bg} = Astro.props
 import '../style/global.css'
 ---
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        // favicon
         <link rel="icon" href="/favicon.svg" type="image/x-icon" />
         <title>{title}</title>
         <meta name="description" content={description} />
 		<ViewTransitions />
     </head>
-    <body class="bg-black">
-        <Header transition:persist/>
-        <slot />
+    <body class="bg-black bg-cover bg-center min-h-screen bg-no-repeat" style={`background-image: url(${bg})`}>
+        <div class="mx-auto md:max-w-[640px] lg:max-w-[768px] xl:max-w-[1024px] max-w-[1440px] p-4">
+			<Header transition:persist/>
+			<slot />
+        </div>
     </body>
 </html>
