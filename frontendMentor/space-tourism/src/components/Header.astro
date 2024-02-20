@@ -1,6 +1,12 @@
 ---
-
+import Navbar from './Navbar.astro'
+import { Image } from 'astro:assets'
+import Logo from '../assets/shared/logo.svg'
 ---
-<div class="text-primary">
-    Hello
-</div>
+<header class="flex items-center fixed justify-between w-full max-w-[1440px] mt-8">
+    <div class="flex items-center">
+		<Image src={Logo} alt="Logo Space Tourism" />
+		<span class="h-[1px] w-[473px] bg-white bg-opacity-15 block ml-[7em] absolute z-10"></span>
+    </div>
+    <Navbar />
+</header>
