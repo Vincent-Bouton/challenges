@@ -16,7 +16,7 @@ export default {
 			'body': '1.125em', // 18px
 			'body-md': '1em', // 16px
 			'body-sm': '0.9375em', // 15px
-			'heading-1': '9.375em', // 150px
+			'heading-1': '150px', // 150px
 			'heading-2': '6.25em', // 100px
 			'heading-3': '3.5em', // 56px
 			'heading-4': '2em', // 32px
