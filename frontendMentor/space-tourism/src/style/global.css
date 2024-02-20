@@ -35,12 +35,12 @@
 }
 
 .btn {
-    @apply text-heading-4 font-bellefair uppercase bg-white text-black rounded-full size-[274px] flex justify-center items-center relative
+    @apply text-heading-4 sm:text-[20px] font-bellefair uppercase bg-white text-black rounded-full size-[274px] md:size-[242px] sm:size-[150px] flex justify-center items-center relative
 }
 /* center cirlce from btn */
 .circle {
-    @apply bg-white bg-opacity-5 size-[274px] rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none
+    @apply bg-[#979797] size-[274px] md:size-[242px] sm:size-[150px] rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none
 }
 .btn:hover .circle {
-    @apply size-[450px]
+    @apply size-[450px] md:size-[400px] sm:size-[250px]
 }
