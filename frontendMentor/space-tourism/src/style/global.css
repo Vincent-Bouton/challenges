@@ -33,3 +33,14 @@
 .nav-text{
     @apply font-barlow-condensed text-nav text-white font-normal tracking-nav md:text-[14px] md:tracking-[2.36px];
 }
+
+.btn {
+    @apply text-heading-4 font-bellefair uppercase bg-white text-black rounded-full size-[274px] flex justify-center items-center relative
+}
+/* center cirlce from btn */
+.circle {
+    @apply bg-white bg-opacity-5 size-[274px] rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none
+}
+.btn:hover .circle {
+    @apply size-[450px]
+}
