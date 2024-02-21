@@ -9,11 +9,12 @@ export async function getStaticPaths() {
 
 import Layout from "../../layout/Layout.astro"
 import Button from "../../components/Button.astro";
+import TechBg from "../../assets/technology/background-technology-desktop.jpg"
 
 const { tech } = Astro.props
 ---
 
-<Layout title={tech.data.name}>
+<Layout title={tech.data.name} bg={TechBg.src}>
 	<main transition:animate="fade" class="grid grid-cols-12 h-screen ">
 		<div class="col-span-4 col-start-2 row-start-4">
 			<h1 class="heading-5 uppercase">
