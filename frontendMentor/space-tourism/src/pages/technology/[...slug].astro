@@ -1,3 +1,28 @@
 ---
+import { getCollection } from 'astro:content'
+export async function getStaticPaths() {
+    const allTech = await getCollection('technology')
+    return allTech.map((tech) => {
+        return {params: {slug: tech.id}, props: {tech}}
+    })
+}
 
+import Layout from "../../layout/Layout.astro"
+import Button from "../../components/Button.astro";
+
+const { tech } = Astro.props
 ---
+
+<Layout title={tech.data.name}>
+	<main transition:animate="fade" class="grid grid-cols-12 h-screen ">
+		<div class="col-span-4 col-start-2 row-start-4">
+			<h1 class="heading-5 uppercase">
+                {tech.data.name}
+			</h1>
+			<p>
+                {tech.data.description}
+			</p>
+		</div>
+	</main>
+</Layout>
+

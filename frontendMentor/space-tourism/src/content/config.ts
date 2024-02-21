@@ -4,8 +4,8 @@ import { defineCollection,z } from 'astro:content';
 const destinationCollection = defineCollection({
     type: 'data',
     schema: z.object({
-        title: z.string(),
-        image: z.object({
+        name: z.string(),
+        images: z.object({
             png: z.string(),
             webp: z.string(),
         }),
@@ -19,7 +19,7 @@ const crewCollection = defineCollection({
     type: 'data',
     schema: z.object({
         name: z.string(),
-        image: z.object({
+        images: z.object({
             png: z.string(),
             webp: z.string(),
         }),
@@ -30,9 +30,9 @@ const crewCollection = defineCollection({
 const technologyCollection = defineCollection({
     type: 'data',
     schema: z.object({
-        title: z.string(),
-        image: z.object({
-            portait: z.string(),
+        name: z.string(),
+        images: z.object({
+            portrait: z.string(),
             landscape: z.string(),
         }),
         description: z.string(),

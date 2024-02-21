@@ -1,3 +1,29 @@
 ---
+import { getCollection } from 'astro:content'
+export async function getStaticPaths() {
+    const allCrews = await getCollection('crew')
+    return allCrews.map((crew) => {
+        return {params: {slug: crew.id}, props: {crew}}
+    })
+}
 
+import Layout from "../../layout/Layout.astro"
+import Button from "../../components/Button.astro";
+
+const { crew } = Astro.props
 ---
+
+<Layout title={crew.data.name}>
+	<main transition:animate="fade" class="grid grid-cols-12 h-screen ">
+		<div class="col-span-4 col-start-2 row-start-4">
+			<h1 class="heading-5 uppercase">
+                {crew.data.name}
+			</h1>
+			<p>
+                {crew.data.bio}
+			</p>
+		</div>
+	</main>
+</Layout>
+
+

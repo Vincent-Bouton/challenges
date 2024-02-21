@@ -1,3 +1,28 @@
 ---
+import { getCollection } from 'astro:content'
+export async function getStaticPaths() {
+  const allPlanets = await getCollection('destination')
+    return allPlanets.map((planet) => {
+        return {params: {slug: planet.id}, props: {planet}}
+    })
+}
 
+import Layout from "../../layout/Layout.astro"
+import Button from "../../components/Button.astro";
+
+const { planet } = Astro.props
 ---
+
+<Layout title={planet.data.name}>
+	<main transition:animate="fade" class="grid grid-cols-12 h-screen ">
+		<div class="col-span-4 col-start-2 row-start-4">
+			<h1 class="heading-5 uppercase">
+				{planet.data.name}
+			</h1>
+			<p>
+				{planet.data.description}
+			</p>
+		</div>
+	</main>
+</Layout>
+
