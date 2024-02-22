@@ -43,3 +43,20 @@
 .btn:hover .circle {
     @apply size-[450px] md:size-[400px] sm:size-[250px]
 }
+
+
+
+.active {
+    @apply relative;
+}
+.active::after {
+    @apply content-[''] bg-primary absolute bottom-0 left-0 right-0 h-[4px] w-full transition-[height] duration-300 ease-in-out;
+}
+
+.tres-container{
+    @apply size-[400px];
+}
+
+canvas{
+    @apply w-full h-full;
+}

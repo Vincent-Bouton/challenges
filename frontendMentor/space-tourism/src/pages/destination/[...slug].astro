@@ -9,8 +9,10 @@ export async function getStaticPaths() {
 
 
 import Layout from "../../layout/Layout.astro"
-import Button from "../../components/Button.astro";
+import Sphere from "../../components/Sphere.vue"
 import DestBg from "../../assets/destination/background-destination-desktop.jpg"
+import { Image } from 'astro:assets'
+
 
 const { planet } = Astro.props
 const  Planets  = await getCollection('destination')
@@ -22,6 +24,9 @@ const planetsID = Planets.map((planet) => {
 <Layout title={planet.data.name} bg={DestBg.src}>
 	<main transition:animate="fade" class="grid grid-cols-12 h-screen ">
 		<div class="col-span-4 col-start-2 row-start-4">
+			<div>
+				<Sphere client:only="vue" textureSphere={planet.data.texture}/>
+			</div>
 			<div >
 				<h1 class="heading-5 uppercase">
 					{planet.data.name}
@@ -30,11 +35,11 @@ const planetsID = Planets.map((planet) => {
 					{planet.data.description}
 				</p>
 			</div>
-			<nav transition:name="nav-text"    class="nav-text">
+			<nav transition:name={`nav-text`} class="nav-text">
 				<ul>
 					{planetsID.map((id) => (
 						<li>
-							<a  href={`/destination/${id}`} class="capitalize" data-astro-history="replace">
+							<a href={`/destination/${id}`} class="capitalize" data-astro-history="replace">
 								{id}
 							</a>
 						</li>
