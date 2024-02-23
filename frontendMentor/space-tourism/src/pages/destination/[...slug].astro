@@ -7,7 +7,6 @@ export async function getStaticPaths() {
     })
 }
 
-
 import Layout from "../../layout/Layout.astro"
 import Sphere from "../../components/Sphere.vue"
 import DestBg from "../../assets/destination/background-destination-desktop.jpg"
@@ -25,10 +24,10 @@ const planetsID = sortedPlanets.map((planet) => {
 ---
 
 <Layout title={planet.data.name} bg={DestBg.src}>
-	<main transition:animate="fade" class="h-screen">
+	<main transition:animate="slide" class="h-screen">
 		<div class="grid grid-cols-12 h-full">
 			<h2 transition:name="destination-title" class="heading-5 flex items-end gap-4 uppercase text-white col-start-2 row-start-2 col-span-4"><span class="font-bold opacity-35">01</span> Pick your destination</h2>
-			<div class="col-span-4 col-start-3 row-start-3">
+			<div class="col-span-4 col-start-3 row-start-3" transition:animate="slide">
 				<div class="flex items-center h-full">
 					<Sphere client:only="vue" textureSphere={planet.data.texture}/>
 				</div>
@@ -43,9 +42,9 @@ const planetsID = sortedPlanets.map((planet) => {
 						{planet.data.description}
 					</p>
 					<div class="mt-14 pt-4 text-white border-t-[0.5px] border-opacity-15 border-primary">
-						<ul class="flex w-full gap-20">
-							<li transition:name="destination-avg-distance"><span class="block subheading-2 text-primary uppercase">Avg. Distance</span><span class="subheading-1 uppercase">{planet.data.distance}</span></li>
-							<li transition:name="destination-travel-time"><span class="block subheading-2 text-primary uppercase">Est. Travel Time</span><span class="subheading-1 uppercase">{planet.data.travel}</span></li>
+						<ul class="flex w-full ">
+							<li class="flex-1"><span transition:name="destination-avg-distance" class="block subheading-2 text-primary uppercase">Avg. Distance</span><span class="subheading-1 uppercase">{planet.data.distance}</span></li>
+							<li class="flex-1"><span transition:name="destination-travel-time" class="block subheading-2 text-primary uppercase">Est. Travel Time</span><span class="subheading-1 uppercase">{planet.data.travel}</span></li>
 						</ul>
 					</div>
 				</div>

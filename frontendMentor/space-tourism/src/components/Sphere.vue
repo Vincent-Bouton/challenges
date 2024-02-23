@@ -2,6 +2,7 @@
 
 import {TresCanvas} from "@tresjs/core";
 import {BasicShadowMap, NoToneMapping, SRGBColorSpace} from "three";
+import {OrbitControls} from "@tresjs/cientos";
 // get props from the parent component
 const props = defineProps(["textureSphere"]);
 
@@ -25,7 +26,7 @@ const { onLoop } = useRenderLoop();
 
 onLoop(({ delta }) => {
   if (sphereRef.value) {
-    sphereRef.value.rotation.y += 0.005;
+    sphereRef.value.rotation.y += 0.003;
   }
 });
 </script>
@@ -34,12 +35,13 @@ onLoop(({ delta }) => {
 <template>
   <div class="tres-container">
     <TresCanvas v-bind="gl">
-      <TresPerspectiveCamera :position="[0, 0, 2.5]"/>
+      <TresPerspectiveCamera :position="[0, 0, 2.4]"/>
       <TresMesh ref="sphereRef">
         <TresSphereGeometry :args="[1, 32, 32]"/>
         <TresMeshStandardMaterial v-bind="pbrTexture" displacement-scale="0.2"/>
         <TresDirectionalLight :position="[0, 2, 4]" :intensity="2" cast-shadow />
         <TresAmbientLight :intensity="0.1" />
+        <OrbitControls :maxPolarAngle="Math.PI / 2" :minPolarAngle="Math.PI / 2" :enable-pan="false" :enable-zoom="false"/>
       </TresMesh>
     </TresCanvas>
   </div>
