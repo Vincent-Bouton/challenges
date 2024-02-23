@@ -20,7 +20,6 @@ const navLink = [
 const pathname = new URL(Astro.request.url).pathname
 const currentPath = pathname.slice(1)
 const firstPath = `/${currentPath.split('/')[0]}`
-console.log(firstPath)
 ---
 <nav class="relative transform -translate-x-[110px] navbar">
     <div class="absolute -z-10 bg-white bg-opacity-5 backdrop-blur-2xl w-screen h-full"></div>
@@ -28,7 +27,7 @@ console.log(firstPath)
         {
             navLink.map((link, index) => (
                 <li class="h-[100px]">
-                    <a href={link.link} class=`h-full nav-text flex items-center gap-1 px-3 ${link.link} ${firstPath === link.link ? "active": ''}`>
+                    <a href={link.link} class=`h-full nav-text flex items-center gap-1 px-3 text-white ${link.link} ${firstPath === link.link ? "active": ''}`>
                         <span class="font-bold">0{index}</span>
                         <span>{link.name}</span>
                     </a>

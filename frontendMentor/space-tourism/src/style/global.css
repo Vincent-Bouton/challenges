@@ -22,16 +22,16 @@
     @apply font-bellefair text-heading-4 text-white font-normal md:text-[24px] sm:text-[16px];
 }
 .heading-5{
-    @apply font-barlow-condensed text-heading-5 text-primary font-normal tracking-heading-5 md:text-[20px] md:tracking-[3.38px] sm:text-[16px] sm:tracking-[2.7px];
+    @apply font-barlow-condensed text-heading-5 font-normal tracking-heading-5 md:text-[20px] md:tracking-[3.38px] sm:text-[16px] sm:tracking-[2.7px];
 }
 .subheading-1{
     @apply font-bellefair text-subheading-1 text-white font-normal;
 }
 .subheading-2{
-    @apply font-barlow-condensed text-subheading-2 text-white font-normal tracking-subheading-2;
+    @apply font-barlow-condensed text-subheading-2 font-normal tracking-subheading-2;
 }
 .nav-text{
-    @apply font-barlow-condensed text-nav text-white font-normal tracking-nav md:text-[14px] md:tracking-[2.36px];
+    @apply font-barlow-condensed text-nav font-normal tracking-nav md:text-[14px] md:tracking-[2.36px];
 }
 
 .btn {
