@@ -13,6 +13,7 @@ const destinationCollection = defineCollection({
         description: z.string(),
         distance: z.string(),
         travel: z.string(),
+        order: z.number()
     })
 });
 const crewCollection = defineCollection({
@@ -25,6 +26,7 @@ const crewCollection = defineCollection({
         }),
         role: z.string(),
         bio: z.string(),
+        order: z.number()
     })
 });
 const technologyCollection = defineCollection({
@@ -36,6 +38,7 @@ const technologyCollection = defineCollection({
             landscape: z.string(),
         }),
         description: z.string(),
+        order: z.number()
     })
 });
 // 3. Exporter un objet `collections` unique pour enregistrer votre (vos) collection(s)
