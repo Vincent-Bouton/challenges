@@ -1,4 +1,5 @@
 // 1. Importer des propriétés à partir de `astro:content`
+
 import { defineCollection,z } from 'astro:content';
 // 2. Définie votre (vos) collection(s)
 const destinationCollection = defineCollection({
@@ -18,11 +19,11 @@ const destinationCollection = defineCollection({
 });
 const crewCollection = defineCollection({
     type: 'data',
-    schema: z.object({
+    schema:({image}) => z.object({
         name: z.string(),
         images: z.object({
-            png: z.string(),
-            webp: z.string(),
+            png:image(),
+            webp:image(),
         }),
         role: z.string(),
         bio: z.string(),
