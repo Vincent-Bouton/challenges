@@ -15,16 +15,10 @@ import Tabs from "../../components/Tabs.astro";
 
 
 const { planet } = Astro.props
-const  Planets  = await getCollection('destination')
-// sort array by Planets.order
-const sortedPlanets = Planets.sort((a, b) => a.data.order - b.data.order)
-const planetsID = sortedPlanets.map((planet) => {
-	return planet.id
-})
 ---
 
 <Layout title={planet.data.name} bg={DestBg.src}>
-	<main transition:animate="slide" class="h-screen">
+	<main transition:animate="fade" class="h-screen">
 		<div class="grid grid-cols-12 h-full">
 			<h2 transition:name="destination-title" class="heading-5 flex items-end gap-4 uppercase text-white col-start-2 row-start-2 col-span-4"><span class="font-bold opacity-35">01</span> Pick your destination</h2>
 			<div class="col-span-4 col-start-3 row-start-3" transition:animate="slide">
@@ -33,18 +27,18 @@ const planetsID = sortedPlanets.map((planet) => {
 				</div>
 			</div>
 			<article class="col-span-4 col-start-8 row-start-3 ">
-				<Tabs planetsID={planetsID}/>
+				<Tabs planetsID={["moon", "mars", "europa", "titan"]}/>
 				<div >
-					<h1 class="heading-2 uppercase my-2">
+					<h1 transition:animate="slide" class="heading-2 uppercase my-2">
 						{planet.data.name}
 					</h1>
-					<p>
+					<p transition:animate="slide">
 						{planet.data.description}
 					</p>
 					<div class="mt-14 pt-4 text-white border-t-[0.5px] border-opacity-15 border-primary">
 						<ul class="flex w-full ">
-							<li class="flex-1"><span transition:name="destination-avg-distance" class="block subheading-2 text-primary uppercase">Avg. Distance</span><span class="subheading-1 uppercase">{planet.data.distance}</span></li>
-							<li class="flex-1"><span transition:name="destination-travel-time" class="block subheading-2 text-primary uppercase">Est. Travel Time</span><span class="subheading-1 uppercase">{planet.data.travel}</span></li>
+							<li class="flex-1"><span transition:name="destination-avg-distance" class="block subheading-2 text-primary uppercase">Avg. Distance</span><span transition:animate="slide" class="subheading-1 uppercase">{planet.data.distance}</span></li>
+							<li class="flex-1"><span transition:name="destination-travel-time" class="block subheading-2 text-primary uppercase">Est. Travel Time</span><span transition:animate="slide" class="subheading-1 uppercase">{planet.data.travel}</span></li>
 						</ul>
 					</div>
 				</div>

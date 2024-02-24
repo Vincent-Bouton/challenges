@@ -9,7 +9,7 @@ const firstPath = `/${currentPath.split('/')[1]}`
 	<nav transition:name={`nav-text`} class="nav-text">
 		<ul class="flex gap-8 text-center">
             {planetsID.map((id) => (
-				<li class=` ${firstPath === "/"+id ? "active text-white": ""} text-primary py-3 overflow-hidden`>
+				<li class=` ${firstPath === "/"+id ? "active text-white pointer-events-none": ""} text-primary py-3 overflow-hidden`>
 					<a href={`/destination/${id}`} class=`uppercase text-center` data-astro-history="replace">
                         {id}
 					</a>
