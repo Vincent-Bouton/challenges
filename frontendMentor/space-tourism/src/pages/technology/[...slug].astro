@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content'
 export async function getStaticPaths() {
     const allTech = await getCollection('technology')
     return allTech.map((tech) => {
-		console.log(tech)
         return {params: {slug: tech.id}, props: {tech}}
     })
 }
