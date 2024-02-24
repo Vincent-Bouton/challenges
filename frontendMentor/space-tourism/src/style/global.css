@@ -31,7 +31,7 @@
     @apply font-barlow-condensed text-subheading-2 font-normal tracking-subheading-2;
 }
 .nav-text{
-    @apply font-barlow-condensed text-nav font-normal tracking-nav md:text-[14px] md:tracking-[2.36px];
+    @apply font-barlow-condensed text-nav font-normal tracking-nav md:text-[14px] sm:text-[16px] md:tracking-[2.36px];
 }
 
 .btn {

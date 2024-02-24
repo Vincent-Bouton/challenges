@@ -21,7 +21,7 @@ const pathname = new URL(Astro.request.url).pathname
 const currentPath = pathname.slice(1)
 const firstPath = `/${currentPath.split('/')[0]}`
 ---
-<nav class="relative transform -translate-x-[110px] lg:-translate-x-[0px] navbar">
+<nav transition:persist transition:name="header-nav" class="relative transform -translate-x-[110px] lg:-translate-x-[0px] navbar">
     <div class="sm:hidden absolute -z-10 bg-white bg-opacity-5 backdrop-blur-2xl w-screen h-full"></div>
 	<!-- Mobile -->
 	<div class="burger mr-4 hidden sm:block z-50">
@@ -29,14 +29,14 @@ const firstPath = `/${currentPath.split('/')[0]}`
 		<div class="bar rounded"></div>
 		<div class="bar rounded"></div>
 	</div>
-	<ul class="burger-nav -z-10 hidden sm:flex flex-col absolute w-[60vw] bg-white right-4 -top-[21px] pt-20 h-screen bg-opacity-15 backdrop-blur-[40px] -right-[60vw] transition-all duration-300">
+	<ul class="burger-nav -z-10 hidden sm:flex flex-col absolute w-[60vw] min-w-[200px] bg-white right-4 -top-[21px] pt-20 h-screen bg-opacity-15 backdrop-blur-[40px] -right-[60vw] transition-[right] duration-300">
 		{
 			navLink.map((link, index) => (
-				<li class="h-[100px]">
-					<a href={link.link} class=`h-full nav-text flex items-center gap-1 px-3 text-white`>
-						<div>
-							<span class="font-bold">0{index}</span>
-							<span>{link.name}</span>
+				<li class="h-[70px]">
+					<a href={link.link} class=`h-full nav-text flex items-center gap-1 px-3 uppercase burger-nav-link`>
+						<div class="flex gap-3 ml-10">
+							<span class="font-bold text-white">0{index}</span>
+							<span class="text-primary">{link.name}</span>
 						</div>
 					</a>
 				</li>
@@ -59,10 +59,33 @@ const firstPath = `/${currentPath.split('/')[0]}`
 </nav>
 
 <script>
-    const burger = document.querySelector(".burger");
-	const nav = document.querySelector(".burger-nav");
-    burger.addEventListener("click", () => {
-        burger.classList.toggle("toggle");
-		nav.classList.toggle("-right-[60vw]");
-    });
+	const burgerFunction = () => {
+		const burger = document.querySelector(".burger");
+		const nav = document.querySelector(".burger-nav");
+		const burgerNavLinks = document.querySelectorAll(".burger-nav-link");
+		burger.addEventListener("click", () => {
+			burger.classList.toggle("toggle");
+			nav.classList.toggle("-right-[60vw]");
+		});
+		burgerNavLinks.forEach((navLink)=>{
+			navLink.addEventListener("click", () => {
+				burger.classList.toggle("toggle");
+				nav.classList.toggle("-right-[60vw]");
+			})
+		})
+
+	}
+	burgerFunction()
+	document.addEventListener('astro:beforeload',()=>{
+		const burger = document.querySelector(".burger");
+		const nav = document.querySelector(".burger-nav");
+		const burgerNavLinks = document.querySelectorAll(".burger-nav-link");
+		burgerNavLinks.forEach((navLink)=>{
+			navLink.addEventListener("click", () => {
+				burger.classList.toggle("toggle");
+				nav.classList.toggle("-right-[60vw]");
+			})
+		})
+		burgerFunction()
+	})
 </script>
