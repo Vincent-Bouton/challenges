@@ -26,16 +26,15 @@ console.log(firstPath)
     <ul class="flex gap-4">
         {navLinks.map((link, index) => (
 			<li>
-                <a href=`/crew/${link.url}`
-                   class=`${firstPath === link.url ? 'bg-opacity-100' : ''}
-                    size-4 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75 transition-all block`
+                <a href=`/crew${link.url}`
+                   class=`hover:bg-opacity-75 ${firstPath === link.url ? 'bg-opacity-100' : 'bg-opacity-50'} size-4 rounded-full bg-white  transition-all block`
                 >
                     <span class="sr-only">{link.name}</span>
                 </a>
             </li>
         ))}
     </ul>
-    <a href={
+    <a transition:name="go-right" href={
         firstPath === '/douglas-hurley' ? '/crew/mark-shuttleworth' :
         firstPath === '/mark-shuttleworth' ? '/crew/victor-glover' :
         firstPath === '/victor-glover' ? '/crew/anousheh-ansari' :
@@ -48,7 +47,7 @@ console.log(firstPath)
 			<span class="h-[2px] w-[13px] bg-white block transform rotate-45 translate-y-[-5px] -translate-x-[11.5px]"></span>
 		</div>
     </a>
-    <a href={
+    <a transition:name="go-left" href={
         firstPath === '/douglas-hurley' ? '/crew/anousheh-ansari' :
         firstPath === '/mark-shuttleworth' ? '/crew/douglas-hurley' :
         firstPath === '/victor-glover' ? '/crew/mark-shuttleworth' :
