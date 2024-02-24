@@ -18,19 +18,18 @@ const { crew } = Astro.props
 ---
 
 <Layout title={crew.data.name} bg={CrewBg.src}>
-	<main transition:animate="fade" class="h-screen grid grid-cols-12 grid-rows-6">
-		<div class="col-start-2 col-span-3 row-start-2 flex items-end">
+	<main transition:animate="slide" class="h-screen grid grid-cols-12 grid-rows-4">
+		<div transition:name="crew-title" class="col-start-2 col-span-5 row-start-2">
 			<h1 class="heading-5 uppercase text-white flex gap-2"><span class="opacity-35 font-bold">02</span>Meet your crew</h1>
 		</div>
-		<div class="col-start-2 col-span-6 row-start-3 row-span-3 flex items-center">
+		<div class="col-start-2 col-span-6 row-start-3 row-span-3">
 			<div>
 				<h2 class="heading-3 uppercase"><span class="block text-heading-4 opacity-30 -mb-3">{crew.data.role}</span>{crew.data.name}</h2>
 				<p class="max-w-[444px]">{crew.data.bio}</p>
 			</div>
-
-		</div>
-		<div transition:name="crew-slider" class="row-start-6 col-start-2">
-			<SliderUnorder/>
+			<div transition:name="crew-slider" class="mt-10 flex items-center">
+				<SliderUnorder/>
+			</div>
 		</div>
 		<div class="col-start-8 col-span-4 row-start-1 row-span-6 flex items-end">
 			<Image src={crew.data.images.webp} alt={crew.data.name} />
