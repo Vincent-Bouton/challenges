@@ -23,7 +23,7 @@ export default {
 			'heading-5': '1.75em', // 28px
 			'subheading-1': '1.75em', // 28px
 			'subheading-2': '0.875em', // 14px
-			'nav': '1em', // 16px
+			'nav': '16px', // 16px
 		},
 		letterSpacing: {
 			'heading-5' : "4.75px",

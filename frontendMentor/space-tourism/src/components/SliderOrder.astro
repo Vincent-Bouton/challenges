@@ -1,1 +1,30 @@
+---
+const navLinks = [
+    {
+        name: 'launch vehicle',
+        link: '/launch-vehicle'
+    },
+    {
+        name: 'spaceport',
+        link: '/spaceport',
+    },
+    {
+        name: 'space capsule',
+        link: '/space-capsule'
+    }
+]
+const pathname = new URL(Astro.request.url).pathname
+const currentPath = pathname.slice(1)
+const firstPath = `/${currentPath.split('/')[1]}`
+---
+<nav transition:name="tech-slider">
+    <ol class="flex flex-col gap-6">
+        {navLinks.map((link,index) => (
+            <li>
+                <a href={`/technology${link.link}`} class=`${firstPath === link.link ? "text-dark bg-white" : "text-white"} size-16 border border-primary border-opacity-40 flex items-center justify-center rounded-full`><span>{index+1}</span></a>
+
+            </li>
+        ))}
+    </ol>
+</nav>
 

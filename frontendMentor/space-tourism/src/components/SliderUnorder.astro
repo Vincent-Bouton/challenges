@@ -20,7 +20,6 @@ const navLinks = [
 const pathname = new URL(Astro.request.url).pathname
 const currentPath = pathname.slice(1)
 const firstPath = `/${currentPath.split('/')[1]}`
-console.log(firstPath)
 ---
 <nav>
     <ul class="flex gap-4">
