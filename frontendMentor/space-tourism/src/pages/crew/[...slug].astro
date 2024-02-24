@@ -7,22 +7,33 @@ export async function getStaticPaths() {
     })
 }
 
+import { Image } from 'astro:assets'
+
 import Layout from "../../layout/Layout.astro"
-import Button from "../../components/Button.astro";
 import CrewBg from "../../assets/crew/background-crew-desktop.jpg"
+import SliderUnorder from "../../components/SliderUnorder.astro";
+
 
 const { crew } = Astro.props
 ---
 
 <Layout title={crew.data.name} bg={CrewBg.src}>
-	<main transition:animate="fade" class="grid grid-cols-12 h-screen ">
-		<div class="col-span-4 col-start-2 row-start-4">
-			<h1 class="heading-5 uppercase">
-                {crew.data.name}
-			</h1>
-			<p>
-                {crew.data.bio}
-			</p>
+	<main transition:animate="fade" class="h-screen grid grid-cols-12 grid-rows-6">
+		<div class="col-start-2 col-span-3 row-start-2 flex items-end">
+			<h1 class="heading-5 uppercase text-white flex gap-2"><span class="opacity-35 font-bold">02</span>Meet your crew</h1>
+		</div>
+		<div class="col-start-2 col-span-6 row-start-3 row-span-3 flex items-center">
+			<div>
+				<h2 class="heading-3 uppercase"><span class="block text-heading-4 opacity-30 -mb-3">{crew.data.role}</span>{crew.data.name}</h2>
+				<p class="max-w-[444px]">{crew.data.bio}</p>
+			</div>
+
+		</div>
+		<div class="row-start-6 col-start-2">
+			<SliderUnorder/>
+		</div>
+		<div class="col-start-8 col-span-4 row-start-1 row-span-6 flex items-end">
+			<Image src={crew.data.images.webp} alt={crew.data.name} />
 		</div>
 	</main>
 </Layout>

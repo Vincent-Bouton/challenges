@@ -19,7 +19,7 @@ export default {
 			'heading-1': '150px', // 150px
 			'heading-2': '6.25em', // 100px
 			'heading-3': '3.5em', // 56px
-			'heading-4': '2em', // 32px
+			'heading-4': '32px', // 32px
 			'heading-5': '1.75em', // 28px
 			'subheading-1': '1.75em', // 28px
 			'subheading-2': '0.875em', // 14px

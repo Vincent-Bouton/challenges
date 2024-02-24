@@ -1,3 +1,66 @@
 ---
-
+const navLinks = [
+    {
+        name: 'douglas hurley',
+        url: '/douglas-hurley'
+    },
+    {
+        name: 'mark shuttleworth',
+        url: '/mark-shuttleworth'
+    },
+    {
+        name: 'victor glover',
+        url: '/victor-glover'
+    },
+    {
+        name: 'anousheh ansari',
+        url: '/anousheh-ansari'
+    }
+]
+const pathname = new URL(Astro.request.url).pathname
+const currentPath = pathname.slice(1)
+const firstPath = `/${currentPath.split('/')[1]}`
+console.log(firstPath)
 ---
+<nav>
+    <ul class="flex gap-4">
+        {navLinks.map((link, index) => (
+			<li>
+                <a href=`/crew/${link.url}`
+                   class=`${firstPath === link.url ? 'bg-opacity-100' : ''}
+                    size-4 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75 transition-all block`
+                >
+                    <span class="sr-only">{link.name}</span>
+                </a>
+            </li>
+        ))}
+    </ul>
+    <a href={
+        firstPath === '/douglas-hurley' ? '/crew/mark-shuttleworth' :
+        firstPath === '/mark-shuttleworth' ? '/crew/victor-glover' :
+        firstPath === '/victor-glover' ? '/crew/anousheh-ansari' :
+        '/crew/douglas-hurley'
+    } class="absolute right-8 hover:right-7 transition-all top-2/4 border-primary border-2 size-10 rounded-full flex items-center justify-start">
+
+		<span class="h-[2px] w-1/2 bg-white block"></span>
+		<div>
+			<span class="h-[2px] w-[13px] bg-white block transform -rotate-45 translate-y-[5px] -translate-x-[11.5px]"></span>
+			<span class="h-[2px] w-[13px] bg-white block transform rotate-45 translate-y-[-5px] -translate-x-[11.5px]"></span>
+		</div>
+    </a>
+    <a href={
+        firstPath === '/douglas-hurley' ? '/crew/anousheh-ansari' :
+        firstPath === '/mark-shuttleworth' ? '/crew/douglas-hurley' :
+        firstPath === '/victor-glover' ? '/crew/mark-shuttleworth' :
+        '/crew/victor-glover'
+
+    }
+        class="absolute left-8 hover:left-7 transition-all top-2/4 border-primary border-2 size-10 rounded-full flex items-center justify-end">
+		<div>
+			<span class="h-[2px] w-[13px] bg-white block transform rotate-45 translate-y-[5px] translate-x-[11.5px]"></span>
+			<span class="h-[2px] w-[13px] bg-white block transform -rotate-45 translate-y-[-5px] translate-x-[11.5px]"></span>
+		</div>
+        <span class="h-[2px] w-1/2 bg-white block"></span>
+
+    </a>
+</nav>
