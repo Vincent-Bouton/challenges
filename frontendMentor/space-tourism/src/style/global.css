@@ -60,3 +60,51 @@
 canvas{
     @apply w-full h-full;
 }
+
+.burger {
+    width: 64px;
+    height: 48px;
+    padding: 16px 16px 0;
+    cursor: pointer;
+}
+
+.bar {
+    width: 32px;
+    height: 2px;
+    background-color: #FFF;
+}
+
+.bar:nth-child(1) {
+    position: relative;
+    top: 0;
+    transition: all 0.2s linear, top 0.2s 0.2s linear;
+}
+
+.bar:nth-child(2) {
+    margin: 6px auto;
+    transition: margin 0.2s 0.2s linear,
+    background-color 0s 0.2s linear;
+}
+
+.bar:nth-child(3) {
+    transition: transform 0.2s linear, top 0.2s 0.2s linear;
+    position: relative;
+    top: 0;
+}
+
+.toggle .bar:nth-child(2) {
+    transition: background-color 0s 0.2s linear;
+    background-color: transparent;
+}
+
+.toggle .bar:nth-child(1) {
+    top: 8px;
+    transition: top 0.2s linear, transform 0.2s 0.2s linear;
+    transform: rotate(45deg);
+}
+
+.toggle .bar:nth-child(3) {
+    top: -8px;
+    transition: transform 0.2s 0.2s linear, top 0.2s linear;
+    transform: rotate(-45deg);
+}

@@ -21,9 +21,30 @@ const pathname = new URL(Astro.request.url).pathname
 const currentPath = pathname.slice(1)
 const firstPath = `/${currentPath.split('/')[0]}`
 ---
-<nav class="relative transform -translate-x-[110px] navbar">
-    <div class="absolute -z-10 bg-white bg-opacity-5 backdrop-blur-2xl w-screen h-full"></div>
-    <ul class="flex justify-center min-h-[100px] nav-text uppercase pl-[123px] pr-16 gap-[40px]">
+<nav class="relative transform -translate-x-[110px] lg:-translate-x-[0px] navbar">
+    <div class="sm:hidden absolute -z-10 bg-white bg-opacity-5 backdrop-blur-2xl w-screen h-full"></div>
+	<!-- Mobile -->
+	<div class="burger mr-4 hidden sm:block z-50">
+		<div class="bar rounded"></div>
+		<div class="bar rounded"></div>
+		<div class="bar rounded"></div>
+	</div>
+	<ul class="burger-nav -z-10 hidden sm:flex flex-col absolute w-[60vw] bg-white right-4 -top-[21px] pt-20 h-screen bg-opacity-15 backdrop-blur-[40px] -right-[60vw] transition-all duration-300">
+		{
+			navLink.map((link, index) => (
+				<li class="h-[100px]">
+					<a href={link.link} class=`h-full nav-text flex items-center gap-1 px-3 text-white`>
+						<div>
+							<span class="font-bold">0{index}</span>
+							<span>{link.name}</span>
+						</div>
+					</a>
+				</li>
+			))
+		}
+	</ul>
+	<!-- Desktop -->
+    <ul class="flex justify-center min-h-[100px] nav-text uppercase pl-[123px] xl:pl-[16px] pr-16 lg:pr-[16px] gap-[40px] lg:gap-3 sm:hidden">
         {
             navLink.map((link, index) => (
                 <li class="h-[100px]">
@@ -36,3 +57,12 @@ const firstPath = `/${currentPath.split('/')[0]}`
         }
     </ul>
 </nav>
+
+<script>
+    const burger = document.querySelector(".burger");
+	const nav = document.querySelector(".burger-nav");
+    burger.addEventListener("click", () => {
+        burger.classList.toggle("toggle");
+		nav.classList.toggle("-right-[60vw]");
+    });
+</script>
