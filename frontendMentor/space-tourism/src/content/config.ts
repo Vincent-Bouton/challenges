@@ -32,11 +32,11 @@ const crewCollection = defineCollection({
 });
 const technologyCollection = defineCollection({
     type: 'data',
-    schema: z.object({
+    schema: ({image}) => z.object({
         name: z.string(),
         images: z.object({
-            portrait: z.string(),
-            landscape: z.string(),
+            portrait:image(),
+            landscape: image(),
         }),
         description: z.string(),
         order: z.number()
