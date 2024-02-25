@@ -22,26 +22,32 @@ const gl = {
 }
 
 const sphereRef = shallowRef(null)
+const orbitRef = shallowRef(null)
 const { onLoop } = useRenderLoop();
+let isMobile = window.innerWidth < 600;
 
+let positionCamera = [0, 0, 2.4];
 onLoop(({ delta }) => {
   if (sphereRef.value) {
-    sphereRef.value.rotation.y += 0.003;
+    sphereRef.value.rotation.y += 0.003
+    // orbitRef.value.value.enabled = window.innerWidth >= 767;
   }
+
 });
+
 </script>
 
 
 <template>
   <div class="tres-container">
     <TresCanvas v-bind="gl">
-      <TresPerspectiveCamera :position="[0, 0, 2.4]"/>
+      <TresPerspectiveCamera  :position="[0,0,2.4]"/>
       <TresMesh ref="sphereRef">
-        <TresSphereGeometry :args="[1, 32, 32]"/>
+        <TresSphereGeometry  :args="[1,32,32]"/>
         <TresMeshStandardMaterial v-bind="pbrTexture" displacement-scale="0.2"/>
         <TresDirectionalLight :position="[0, 2, 4]" :intensity="2" cast-shadow />
         <TresAmbientLight :intensity="0.1" />
-        <OrbitControls :maxPolarAngle="Math.PI / 2" :minPolarAngle="Math.PI / 2" :enable-pan="false" :enable-zoom="false"/>
+        <OrbitControls ref="orbitRef"  :maxPolarAngle="Math.PI / 2" :minPolarAngle="Math.PI / 2" :enable-pan="false" :enable-zoom="false" />
       </TresMesh>
     </TresCanvas>
   </div>

@@ -25,7 +25,7 @@
     @apply font-barlow-condensed text-heading-5 font-normal tracking-heading-5 md:text-[20px] md:tracking-[3.38px] sm:text-[16px] sm:tracking-[2.7px];
 }
 .subheading-1{
-    @apply font-bellefair text-subheading-1 text-white font-normal;
+    @apply font-bellefair text-subheading-1 text-white font-normal md:text-[22px];
 }
 .subheading-2{
     @apply font-barlow-condensed text-subheading-2 font-normal tracking-subheading-2;
@@ -54,7 +54,7 @@
 }
 
 .tres-container{
-    @apply size-[400px] md:size-[200px] sm:size-[125px];
+    @apply size-[400px] lg:size-[300px] md:size-[40vw] sm:size-[50vw] max-w-[400px] md:max-w-[250px] md:max-h-[250px] sm:max-w-[200px] sm:max-h-[200px]
 }
 
 
