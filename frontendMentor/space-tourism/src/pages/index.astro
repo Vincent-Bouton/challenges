@@ -1,9 +1,17 @@
 ---
 import Layout from '../layout/Layout.astro'
 import Button from '../components/Button.astro'
-import HomeBg from '../assets/home/background-home-desktop.jpg'
+import HomeBgDesk from '../assets/home/background-home-desktop.jpg'
+import HomeBgMobile from '../assets/home/background-home-mobile.jpg'
+import HomeBgTablet from '../assets/home/background-home-tablet.jpg'
+
+const HomeBg = {
+	desktop: HomeBgDesk,
+	mobile: HomeBgMobile,
+	tablet: HomeBgTablet
+}
 ---
-<Layout bg={HomeBg.src}>
+<Layout bg={HomeBg}>
 	<main transition:animate="fade" class="grid grid-cols-12 h-screen grid-rows-4 ">
 		<div class="col-span-6 col-start-2 row-start-2 row-span-3 flex items-center md:row-start-1 md:col-start-1 md:col-span-12 md:text-center justify-center">
 			<div>

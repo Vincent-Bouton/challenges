@@ -1,8 +1,32 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
+import { Image } from 'astro:assets'
 import Header from '../components/Header.astro'
 const {title, description, bg} = Astro.props
 import '../style/global.css'
+
+const navLink = [
+    {
+        name: 'Home',
+        link: '/'
+    },
+    {
+        name: 'Destination',
+        link: '/destination'
+    },
+    {
+        name: 'Crew',
+        link: '/crew'
+    },
+    {
+        name: 'Technology',
+        link: '/technology'
+    }
+]
+
+const pathname = new URL(Astro.request.url).pathname
+const currentPath = pathname.slice(1)
+const firstPath = `${currentPath.split('/')[0] === '' ? 'home' : currentPath.split('/')[0]} `
 ---
 <html lang="en">
     <head>
@@ -13,7 +37,7 @@ import '../style/global.css'
         <meta name="description" content={description} />
 		<ViewTransitions />
     </head>
-    <body class="bg-black bg-cover bg-center min-h-screen bg-no-repeat overflow-hidden" style={`background-image: url(${bg})`}>
+    <body class=`bg-black bg-cover bg-center min-h-screen bg-no-repeat overflow-hidden bg-${firstPath}`>
         <div class="mx-auto xl:max-w-[1024px] max-w-[1440px] px-[55px] lg:px-4">
 			<Header />
             <slot />
