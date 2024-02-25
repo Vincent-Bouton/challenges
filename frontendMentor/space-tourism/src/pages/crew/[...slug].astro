@@ -18,21 +18,24 @@ const { crew } = Astro.props
 ---
 
 <Layout title={crew.data.name} bg={CrewBg.src}>
-	<main transition:animate="slide" class="h-screen grid grid-cols-12 grid-rows-4">
-		<div transition:name="crew-title" class="col-start-2 col-span-5 row-start-2">
+	<main transition:animate="slide" class="h-screen grid grid-cols-12 grid-rows-4 lg:grid-rows-8">
+		<div transition:name="crew-title" class="col-start-2 col-span-12 row-start-2 lg:flex lg:items-center">
 			<h1 class="heading-5 uppercase text-white flex gap-2"><span class="opacity-35 font-bold">02</span>Meet your crew</h1>
 		</div>
-		<div class="col-start-2 col-span-6 row-start-3 row-span-3">
-			<div>
-				<h2 class="heading-3 uppercase"><span class="block text-heading-4 opacity-30 -mb-3">{crew.data.role}</span>{crew.data.name}</h2>
-				<p class="max-w-[444px]">{crew.data.bio}</p>
+		<div class="col-start-2 col-span-6 row-start-3 row-span-3 lg:row-start-3 sm:row-start-5 lg:row-span-3 lg:col-span-12 lg:col-start-1 lg:flex lg:justify-center lg:text-center">
+			<div class="sm:flex sm:flex-col-reverse">
+				<div class="sm:my-5">
+					<h2 class="heading-3 uppercase"><span class="block heading-4 opacity-30 -mb-3">{crew.data.role}</span>{crew.data.name}</h2>
+					<p class="max-w-[444px] lg:mx-auto">{crew.data.bio}</p>
+				</div>
+				<div transition:name="crew-slider" class="mt-10 flex items-center lg:justify-center">
+					<SliderUnorder/>
+				</div>
 			</div>
-			<div transition:name="crew-slider" class="mt-10 flex items-center">
-				<SliderUnorder/>
-			</div>
+
 		</div>
-		<div class="col-start-8 col-span-4 row-start-1 row-span-6 flex items-end">
-			<Image src={crew.data.images.webp} alt={crew.data.name} />
+		<div class="col-start-8 col-span-4 row-start-4 flex items-end lg:row-end-9 sm:row-end-6 sm:mb-20 lg:row-span-3 lg:col-start-4 lg:col-span-6 ">
+			<Image src={crew.data.images.webp} alt={crew.data.name} class="lg:max-h-[500px]"/>
 		</div>
 	</main>
 </Layout>
