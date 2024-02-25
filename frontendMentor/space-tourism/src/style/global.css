@@ -54,8 +54,9 @@
 }
 
 .tres-container{
-    @apply size-[400px];
+    @apply size-[400px] md:size-[200px] sm:size-[125px];
 }
+
 
 canvas{
     @apply w-full h-full;

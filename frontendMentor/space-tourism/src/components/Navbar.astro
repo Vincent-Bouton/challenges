@@ -30,7 +30,7 @@ const firstPath = `/${currentPath.split('/')[0]}`
 			<div class="bar rounded"></div>
 			<div class="bar rounded"></div>
 		</div>
-		<ul class="burger-nav -z-10 hidden sm:flex flex-col absolute w-[60vw] min-w-[200px] bg-white  -top-[21px] pt-20 h-screen bg-opacity-15 backdrop-blur-[40px] -right-[60vw] transition-[right] duration-300">
+		<ul class="burger-nav -z-10 hidden sm:flex flex-col absolute w-[60vw] min-w-[200px] bg-white -top-[21px] pt-20 h-screen bg-opacity-15 backdrop-blur-[40px] -right-[100vw] transition-[right] duration-300">
 			{
 				navLink.map((link, index) => (
 					<li class="h-[70px]">
@@ -68,12 +68,12 @@ const firstPath = `/${currentPath.split('/')[0]}`
 		const burgerNavLinks = document.querySelectorAll(".burger-nav-link");
 		burger.addEventListener("click", () => {
 			burger.classList.toggle("toggle");
-			nav.classList.toggle("right-4");
+			nav.classList.toggle("md:right-4");
 		});
 		burgerNavLinks.forEach((navLink)=>{
 			navLink.addEventListener("click", () => {
 				burger.classList.toggle("toggle");
-				nav.classList.toggle("right-4");
+				nav.classList.toggle("md:right-4");
 			})
 		})
 
@@ -86,7 +86,7 @@ const firstPath = `/${currentPath.split('/')[0]}`
 		burgerNavLinks.forEach((navLink)=>{
 			navLink.addEventListener("click", () => {
 				burger.classList.toggle("toggle");
-				nav.classList.toggle("right-4");
+				nav.classList.toggle("md:right-4");
 			})
 		})
 		burgerFunction()
