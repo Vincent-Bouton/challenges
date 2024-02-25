@@ -2,20 +2,24 @@
 const navLink = [
     {
         name: 'Home',
-        link: '/'
+        link: '/',
+		path: '/'
     },
     {
         name: 'Destination',
-        link: '/destination'
+        link: '/destination/moon',
+		path: '/destination'
     },
     {
         name: 'Crew',
-        link: '/crew'
+        link: '/crew/douglas-hurley',
+		path: '/crew'
     },
     {
         name: 'Technology',
-        link: '/technology'
-    }
+        link: '/technology/launch-vehicle',
+		path: '/technology'
+	},
 ]
 const pathname = new URL(Astro.request.url).pathname
 const currentPath = pathname.slice(1)
@@ -51,7 +55,7 @@ const firstPath = `/${currentPath.split('/')[0]}`
         {
             navLink.map((link, index) => (
                 <li class="h-[100px]">
-                    <a href={link.link} class=`h-full nav-text flex items-center gap-1 px-3 text-white ${link.link} ${firstPath === link.link ? "active pointer-events-none": ''}`>
+                    <a href={link.link} class=`h-full nav-text flex items-center gap-1 px-3 text-white ${link.link} ${firstPath === link.path ? "active pointer-events-none": ''}`>
                         <span class="font-bold">0{index}</span>
                         <span>{link.name}</span>
                     </a>
