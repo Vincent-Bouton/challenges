@@ -66,14 +66,18 @@ const firstPath = `/${currentPath.split('/')[0]}`
 		const burger = document.querySelector(".burger");
 		const nav = document.querySelector(".burger-nav");
 		const burgerNavLinks = document.querySelectorAll(".burger-nav-link");
-		burger.addEventListener("click", () => {
-			burger.classList.toggle("toggle");
-			nav.classList.toggle("md:right-4");
+		burger!.addEventListener("click", () => {
+			if (burger && nav){
+				burger.classList.toggle("toggle");
+				nav.classList.toggle("md:right-4");
+			}
 		});
 		burgerNavLinks.forEach((navLink)=>{
 			navLink.addEventListener("click", () => {
-				burger.classList.toggle("toggle");
-				nav.classList.toggle("md:right-4");
+				if (burger && nav){
+					burger.classList.toggle("toggle");
+					nav.classList.toggle("md:right-4");
+				}
 			})
 		})
 
@@ -85,8 +89,10 @@ const firstPath = `/${currentPath.split('/')[0]}`
 		const burgerNavLinks = document.querySelectorAll(".burger-nav-link");
 		burgerNavLinks.forEach((navLink)=>{
 			navLink.addEventListener("click", () => {
-				burger.classList.toggle("toggle");
-				nav.classList.toggle("md:right-4");
+				if (burger && nav){
+					burger.classList.toggle("toggle");
+					nav.classList.toggle("md:right-4");
+				}
 			})
 		})
 		burgerFunction()
