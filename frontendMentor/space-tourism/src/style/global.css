@@ -10,7 +10,7 @@
 /* Custom styles */
 
 .heading-1{
-    @apply font-bellefair text-heading-1 text-white font-normal sm:text-[80px];
+    @apply font-bellefair text-heading-1 text-white font-normal xl:text-[120px] sm:text-[80px];
 }
 .heading-2{
     @apply font-bellefair text-heading-2 text-white font-normal md:text-[80px] sm:text-heading-3;
@@ -35,10 +35,10 @@
 }
 
 .btn {
-    @apply text-heading-4 sm:text-[20px] font-bellefair uppercase bg-white text-black rounded-full size-[274px] md:size-[242px] sm:size-[150px] flex justify-center items-center relative
+    @apply text-heading-4 sm:text-[20px] font-bellefair uppercase bg-white text-black rounded-full size-[274px] xl:size-[242px] sm:size-[150px] flex justify-center items-center relative
 }
 .btn .circle {
-    @apply bg-white bg-opacity-15 size-[274px] md:size-[242px] sm:size-[150px] rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none -z-10
+    @apply bg-white bg-opacity-15 size-[274px] xl:size-[242px] sm:size-[150px] rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none -z-10
 }
 .btn:hover .circle {
     @apply size-[450px] md:size-[400px] sm:size-[250px]
