@@ -18,11 +18,10 @@ const currentPath = pathname.slice(1)
 const firstPath = `/${currentPath.split('/')[1]}`
 ---
 <nav transition:name="tech-slider">
-    <ol class="flex flex-col gap-6">
+    <ol class="flex flex-col gap-6 xl:flex-row">
         {navLinks.map((link,index) => (
             <li>
-                <a href={`/technology${link.link}`} class=`${firstPath === link.link ? "text-dark bg-white" : "text-white"} size-16 border border-primary border-opacity-40 flex items-center justify-center rounded-full`><span>{index+1}</span></a>
-
+                <a href={`/technology${link.link}`} class=`${firstPath === link.link ? "text-dark bg-white pointer-events-none" : "text-white"} size-16 border hover:bg-white hover:bg-opacity-30 hover:transition border-primary border-opacity-40 flex items-center justify-center rounded-full`><span>{index+1}</span></a>
             </li>
         ))}
     </ol>
