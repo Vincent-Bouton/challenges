@@ -34,14 +34,14 @@ const firstPath = `/${currentPath.split('/')[0]}`
 			<div class="bar rounded"></div>
 			<div class="bar rounded"></div>
 		</div>
-		<ul class="burger-nav -z-10 hidden sm:flex flex-col absolute w-[60vw] min-w-[200px] bg-white -top-[21px] pt-20 h-screen bg-opacity-15 backdrop-blur-[9999px] -right-[100vw] transition-[right] duration-300">
+		<ul class="burger-nav -z-10 hidden sm:flex flex-col absolute w-[60vw] min-w-[200px] bg-white -top-[21px] pt-20 h-screen bg-opacity-15 backdrop-blur-[40px] sm:bg-[#646464] -right-[100vw] transition-[right] duration-300">
 			{
 				navLink.map((link, index) => (
 					<li class="h-[70px]">
 						<a href={link.link} class=`h-full nav-text flex items-center gap-1 px-3 uppercase burger-nav-link`>
 							<div class="flex gap-3 ml-10">
 								<span class="font-bold text-white">0{index}</span>
-								<span class="text-primary">{link.name}</span>
+								<span class="text-white">{link.name}</span>
 							</div>
 						</a>
 					</li>
