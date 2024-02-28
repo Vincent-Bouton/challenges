@@ -49,6 +49,9 @@
 .active {
     @apply relative;
 }
+.active-hover:hover::after{
+    @apply content-[''] bg-primary opacity-45 absolute bottom-0 left-0 right-0 h-[4px] w-full transition-[height] duration-300 ease-in-out;
+}
 .active::after {
     @apply content-[''] bg-primary absolute bottom-0 left-0 right-0 h-[4px] w-full transition-[height] duration-300 ease-in-out;
 }
