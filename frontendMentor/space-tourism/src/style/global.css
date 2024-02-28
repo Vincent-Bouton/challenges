@@ -65,6 +65,10 @@ canvas{
     @apply w-full h-full;
 }
 
+.burger-nav{
+    -webkit-backdrop-filter: blur(9999px);
+}
+
 .burger {
     width: 64px;
     height: 48px;
