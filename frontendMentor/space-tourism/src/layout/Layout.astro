@@ -37,7 +37,7 @@ const firstPath = `${currentPath.split('/')[0] === '' ? 'home' : currentPath.spl
         <meta name="description" content={description} />
 		<ViewTransitions />
     </head>
-    <body class=`bg-black bg-cover min-h-screen bg-no-repeat bg-${firstPath}`>
+    <body class=`bg-black min-h-screen bg-no-repeat bg-${firstPath}`>
         <div class="mx-auto xl:max-w-[1024px] max-w-[1440px] px-[55px] lg:px-4">
 			<Header />
             <slot />
