@@ -1,7 +1,18 @@
 <script setup lang="ts">
-let timeout;
+let isCursorVisible = true;
+
+
 document.addEventListener('mousemove', function(e) {
+  if(isCursorVisible){
+    const removeCursor = document.querySelectorAll('body, a, button')
+
+    isCursorVisible = false;
+    removeCursor.forEach(element => {
+      element.style.cursor = 'none';
+    });
+  }
   const cursor = document.getElementById('cursor');
+  if(!cursor) return;
   const after = document.getElementById('after');
   cursor.style.left = e.pageX-5 + 'px';
   cursor.style.top = e.pageY-5 + 'px';
@@ -37,13 +48,6 @@ hoverables.forEach(element => {
 
 </template>
 <style>
-body {
-  cursor: none; /* Hide the default cursor */
-}
-
-a, button {
-  cursor: none;
-}
 
 #cursor, #after {
   position: absolute;
