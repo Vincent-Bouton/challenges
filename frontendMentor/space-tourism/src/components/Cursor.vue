@@ -1,7 +1,6 @@
 <script setup lang="ts">
 let isCursorVisible = true;
 
-
 document.addEventListener('mousemove', function(e) {
   if(isCursorVisible){
     const removeCursor = document.querySelectorAll('body, a, button')
@@ -16,26 +15,25 @@ document.addEventListener('mousemove', function(e) {
   const after = document.getElementById('after');
   cursor.style.left = e.pageX-5 + 'px';
   cursor.style.top = e.pageY-5 + 'px';
-  const height = after.style.height === '' ? '30px': after.style.height;
+  const height = after!.style.height === '' ? '30px': after!.style.height;
   // get just the number from height and width
   const heightNumber = parseInt(height.replace(/\D/g, ''));
 
-  after.style.left = e.pageX-heightNumber/2 + 'px';
-  after.style.top = e.pageY-heightNumber/2 + 'px';
-
+  after!.style.left = e.pageX-heightNumber/2 + 'px';
+  after!.style.top = e.pageY-heightNumber/2 + 'px';
 });
 
 const hoverables = document.querySelectorAll('a, button');
 hoverables.forEach(element => {
   element.addEventListener('mouseover', function(e) {
     const after = document.getElementById('after');
-    after.style.width = '60px';
-    after.style.height = '60px';
+    after!.style.width = '60px';
+    after!.style.height = '60px';
   });
   element.addEventListener('mouseout', function(e) {
     const after = document.getElementById('after');
-    after.style.width = '30px';
-    after.style.height = '30px';
+    after!.style.width = '30px';
+    after!.style.height = '30px';
   });
 });
 
