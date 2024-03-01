@@ -60,6 +60,9 @@
     @apply size-[400px] lg:size-[300px] md:size-[40vw] sm:size-[50vw] max-w-[400px] md:max-w-[250px] md:max-h-[250px] sm:max-w-[200px] sm:max-h-[200px]
 }
 
+body{
+    /*cursor: none;*/
+}
 
 canvas{
     @apply w-full h-full;
@@ -177,4 +180,18 @@ canvas{
     .bg-technology{
         background-image: url("../assets/technology/background-technology-mobile.jpg");
     }
+}
+
+.cursor {
+    pointer-events: none;
+}
+.cursor__ball {
+    position: fixed;
+    top: 0;
+    left: 0;
+    mix-blend-mode: difference;
+    z-index: 1000;
+}
+circle {
+    fill: #f7f8fa;
 }

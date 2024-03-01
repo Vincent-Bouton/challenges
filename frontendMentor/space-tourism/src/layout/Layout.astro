@@ -1,9 +1,12 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+
+
+// import { ViewTransitions } from 'astro:transitions';
 import { Image } from 'astro:assets'
 import Header from '../components/Header.astro'
 const {title, description, bg} = Astro.props
 import '../style/global.css'
+import Cursor from '../components/Cursor.vue'
 
 const navLink = [
     {
@@ -35,10 +38,11 @@ const firstPath = `${currentPath.split('/')[0] === '' ? 'home' : currentPath.spl
         <link rel="icon" href="/favicon.svg" type="image/x-icon" />
         <title>{title}</title>
         <meta name="description" content={description} />
-		<ViewTransitions />
+		<!--<ViewTransitions />-->
     </head>
     <body class=`bg-black min-h-screen bg-no-repeat bg-${firstPath} bg-cover`>
         <div class=`bg-${firstPath} h-full w-full bg-cover absolute -z-10`></div>
+        <Cursor client:only="vue"/>
         <div class="mx-auto xl:max-w-[1024px] max-w-[1440px] px-[55px] lg:px-4">
 			<Header />
             <slot />
