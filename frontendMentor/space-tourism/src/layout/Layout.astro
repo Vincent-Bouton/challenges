@@ -42,7 +42,7 @@ const firstPath = `${currentPath.split('/')[0] === '' ? 'home' : currentPath.spl
     </head>
     <body class=`bg-black min-h-screen bg-no-repeat bg-${firstPath} bg-cover`>
         <div class=`bg-${firstPath} h-full w-full bg-cover absolute -z-10`></div>
-        <Cursor transition:persist client:only="vue"/>
+        <Cursor client:only="vue"/>
         <div class="mx-auto xl:max-w-[1024px] max-w-[1440px] px-[55px] lg:px-4">
 			<Header />
             <slot />
