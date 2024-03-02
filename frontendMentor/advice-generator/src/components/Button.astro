@@ -1,3 +1,7 @@
 ---
-
+import {Image} from "astro:assets"
+import dice from '../assets/icon-dice.svg'
 ---
+<button class="size-[64px] flex items-center justify-center rounded-full bg-neonGreen">
+    <Image src={dice} alt="dice to get a new random advice" />
+</button>
