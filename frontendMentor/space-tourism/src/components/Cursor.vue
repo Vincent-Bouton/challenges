@@ -1,14 +1,12 @@
 <script setup lang="ts">
 let isCursorVisible = true;
 
-
 document.addEventListener('mousemove', function(e) {
   if(isCursorVisible){
     const removeCursor = document.querySelectorAll('body, a, button')
     isCursorVisible = false;
     removeCursor.forEach(element => {
       element.style.cursor = 'none';
-
     });
   }
   const cursor = document.getElementById('cursor');
@@ -22,10 +20,10 @@ document.addEventListener('mousemove', function(e) {
 
   after!.style.left = e.pageX-heightNumber/2 + 'px';
   after!.style.top = e.pageY-heightNumber/2 + 'px';
-  });
+});
 
-  const hoverables = document.querySelectorAll('a, button');
-  hoverables.forEach(element => {
+const hoverables = document.querySelectorAll('a, button');
+hoverables.forEach(element => {
   element.addEventListener('mouseover', function(e) {
     const after = document.getElementById('after');
     after!.style.width = '60px';
@@ -36,8 +34,7 @@ document.addEventListener('mousemove', function(e) {
     after!.style.width = '30px';
     after!.style.height = '30px';
   });
-})
-
+});
 
 </script>
 <template>
