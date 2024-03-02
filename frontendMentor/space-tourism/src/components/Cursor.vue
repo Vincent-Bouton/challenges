@@ -6,8 +6,8 @@ document.addEventListener('mousemove', function(e) {
   if(isCursorVisible){
     const removeCursor = document.querySelectorAll('body, a, button')
     const cursorContainer = document.getElementById('cursor-container');
+    cursorContainer!.classList.remove('sr-only');
     isCursorVisible = false;
-    cursorContainer!.classList.remove('hidden');
     removeCursor.forEach(element => {
       element.style.cursor = 'none';
     });
@@ -42,7 +42,7 @@ document.addEventListener('mousemove', function(e) {
 
 </script>
 <template>
-  <div id="cursor-container" class="hidden">
+  <div id="cursor-container" class="sr-only">
     <div id="cursor"></div>
     <div id="after"></div>
   </div>
