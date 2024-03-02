@@ -40,7 +40,7 @@ document.addEventListener('mousemove', function(e) {
 
 </script>
 <template>
-  <div id="cursor-container">
+  <div>
     <div id="cursor"></div>
     <div id="after"></div>
   </div>
