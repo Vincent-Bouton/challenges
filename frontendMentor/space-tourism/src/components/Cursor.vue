@@ -8,6 +8,7 @@ document.addEventListener('mousemove', function(e) {
     isCursorVisible = false;
     removeCursor.forEach(element => {
       element.style.cursor = 'none';
+
     });
   }
   const cursor = document.getElementById('cursor');
