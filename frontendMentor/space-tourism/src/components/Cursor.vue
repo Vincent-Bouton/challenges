@@ -4,6 +4,8 @@ let isCursorVisible = true;
 document.addEventListener('mousemove', function(e) {
   if(isCursorVisible){
     const removeCursor = document.querySelectorAll('body, a, button')
+    const cursorContainer = document.querySelector('.cursor');
+    if(cursorContainer) cursorContainer.classList.remove('hidden');
     isCursorVisible = false;
     removeCursor.forEach(element => {
       element.style.cursor = 'none';
@@ -38,7 +40,7 @@ hoverables.forEach(element => {
 
 </script>
 <template>
-  <div class="cursor">
+  <div class="cursor hidden">
     <div id="cursor"></div>
     <div id="after"></div>
   </div>
