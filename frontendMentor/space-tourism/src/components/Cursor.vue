@@ -1,11 +1,13 @@
 <script setup lang="ts">
 let isCursorVisible = true;
 
+
 document.addEventListener('mousemove', function(e) {
   if(isCursorVisible){
     const removeCursor = document.querySelectorAll('body, a, button')
-
+    const cursorContainer = document.getElementById('cursor-container');
     isCursorVisible = false;
+    cursorContainer!.classList.remove('hidden');
     removeCursor.forEach(element => {
       element.style.cursor = 'none';
     });
@@ -21,10 +23,10 @@ document.addEventListener('mousemove', function(e) {
 
   after!.style.left = e.pageX-heightNumber/2 + 'px';
   after!.style.top = e.pageY-heightNumber/2 + 'px';
-});
+  });
 
-const hoverables = document.querySelectorAll('a, button');
-hoverables.forEach(element => {
+  const hoverables = document.querySelectorAll('a, button');
+  hoverables.forEach(element => {
   element.addEventListener('mouseover', function(e) {
     const after = document.getElementById('after');
     after!.style.width = '60px';
@@ -35,11 +37,12 @@ hoverables.forEach(element => {
     after!.style.width = '30px';
     after!.style.height = '30px';
   });
-});
+})
+
 
 </script>
 <template>
-  <div class="cursor">
+  <div id="cursor-container" class="hidden">
     <div id="cursor"></div>
     <div id="after"></div>
   </div>
