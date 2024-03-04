@@ -1,47 +1,68 @@
-# Astro Starter Kit: Minimal
+# Frontend Mentor - Space tourism website solution
 
-```sh
-npm create astro@latest -- --template minimal
-```
+This is a solution to the [Space tourism website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## Table of contents
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+- [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+    - [Useful resources](#useful-resources)
+- [Author](#author)
 
-## 🚀 Project Structure
+## Overview
 
-Inside of your Astro project, you'll see the following folders and files:
+### The challenge
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Users should be able to:
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- View the optimal layout for each of the website's pages depending on their device's screen size
+- See hover states for all interactive elements on the page
+- View each page and be able to toggle between the tabs to see new information
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Screenshot
 
-Any static assets, like images, can be placed in the `public/` directory.
+![](./public/website.png)
 
-## 🧞 Commands
+### Links
 
-All commands are run from the root of the project, from a terminal:
+- Solution URL: [My Solution](https://www.frontendmentor.io/solutions/space-tourism-with-threejs-and-astro-0yiJPY38VO)
+- Live Site URL: [Live Site URL](https://space-tourism-astro-threejs.vercel.app)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## My process
 
-## 👀 Want to learn more?
+### Built with
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [Astro](https://astro.build/)
+- [Vue](https://v3.vuejs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [TresJS](https://tres.js.org/)
+- [ThreeJS](https://threejs.org/)
+
+### What I learned
+I tried to push myself, and learn things that I never used before, like ThreeJS. I learned a lot about Astro :
+- `viewTransition` is a great feature, that allows you to create a transition between pages, and it's very easy to use.
+- `Data collection`, and how to use it in the components.
+- `Astro Island`, and how to use it to create a website with multiple pages.
+
+I ended up using TresJS to create the 3D models, and animations. It was a great experience, and I learned a lot about it.
+
+### Continued development
+
+I want to continue learning about ThreeJS, and how to create more complex 3D models, and animations.
+Pushing myself to learn more in depth about Astro, this framework is amazing, and I want to use it more in the future.
+### Useful resources
+
+- [Astro Docs](https://docs.astro.build) - This helped me to understand how to use Astro.
+- [ThreeJS Docs](https://threejs.org/docs/) - This is an amazing documentation, and it helped me to understand how to use ThreeJS.
+- [TresJS Docs](https://docs.tresjs.org/) - This is an amazing documentation, and it helped me to understand how to use TresJS.
+## Author
+
+- Website - [Vincent Bouton](https://vbdevpro.com)
+- Frontend Mentor - [@Vincent-Bouton](https://www.frontendmentor.io/profile/Vincent-Bouton)
+
