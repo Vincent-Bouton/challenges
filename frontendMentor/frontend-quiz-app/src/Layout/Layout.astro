@@ -2,11 +2,12 @@
 import Heading from "./Heading.astro";
 const { title, description } = Astro.props;
 ---
+
 <html>
-    <head>
-	    <Heading title={title} description={description} />
-    </head>
-    <body>
-        <slot/>
-    </body>
+  <head>
+    <Heading title={title} description={description} />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
