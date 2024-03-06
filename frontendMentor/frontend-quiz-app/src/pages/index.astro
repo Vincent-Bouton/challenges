@@ -1,7 +1,10 @@
 ---
-import Layout from "../Layout/Layout.astro";
+import Layout from "@layout/Layout.astro";
+import Button from "@components/Button.astro";
 ---
 
-<Layout>
-  <h1>Hello Astro!</h1>
+<Layout title="Test">
+  <div class="container mx-auto px-2">
+    <Button />
+  </div>
 </Layout>
