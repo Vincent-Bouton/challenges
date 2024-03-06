@@ -30,11 +30,24 @@ export default {
 			'headingL': '64px',
 			'headingM': '36px',
 			'headingS': '28px',
-			'bodyM': '12px'
+			'bodyM': '24px',
+			'bodyS': '20px'
 		},
 		fontWeight: {
 			'regular': 400,
 			'medium': 500,
+		},
+		// Desktop First
+		screens: {
+			'2xl': {'min': '1535px'},
+			'xl': {'max': '1279px'},
+			'lg': {'max': '1023px'},
+			'md': {'max': '767px'},
+			'sm': {'max': '639px'},
+		},
+		container: {
+			center: true,
+			padding: '2rem',
 		},
 		extend: {},
 	},
