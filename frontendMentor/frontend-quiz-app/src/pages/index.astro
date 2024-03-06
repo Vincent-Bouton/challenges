@@ -1,10 +1,16 @@
 ---
 import Layout from "@layout/Layout.astro";
 import Button from "@components/Button.astro";
+import Selection from "../components/Selection.astro";
 ---
 
 <Layout title="Test">
-  <div class="container mx-auto px-2">
+  <div class="container mx-auto flex min-h-screen flex-col gap-4 px-2">
+    <Selection answer="test" correctAnswer="test" order={0} />
+    <Selection answer="test 1" correctAnswer="test" order={1} />
+    <Selection answer="test 2" correctAnswer="test" order={2} />
+
+    <Selection answer="test 3" correctAnswer="test" order={3} />
     <Button />
   </div>
 </Layout>

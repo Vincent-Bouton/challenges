@@ -1,3 +1,21 @@
 ---
-
+const { answer, correctAnswer, order } = Astro.props;
+// transform order to letter
+const orderToLetter = (order) => {
+  const letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+  return letters[order];
+};
+const orderLetter = orderToLetter(order);
 ---
+
+<div class="flex flex-grow">
+  <div
+    class="flex w-full flex-grow items-center gap-4 rounded-md bg-white px-6 py-2 shadow-xl"
+  >
+    <span
+      class="flex size-10 items-center justify-center rounded-md bg-lightGrey font-medium text-navy"
+      >{orderLetter}</span
+    >
+    <span>{answer}</span>
+  </div>
+</div>

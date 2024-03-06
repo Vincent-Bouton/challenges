@@ -2,13 +2,15 @@
 
 ---
 
-<a
-  id="button"
-  class="flex w-full cursor-pointer items-center justify-center rounded-md bg-primary-idle py-2 text-white transition hover:bg-primary-hover"
->
-  <span>Submit Answer</span>
-  <a></a>
-</a>
+<div class="flex flex-grow">
+  <a
+    id="button"
+    class="flex w-full flex-grow cursor-pointer items-center justify-center rounded-md bg-primary-idle py-2 text-white transition hover:bg-primary-hover"
+  >
+    <span>Submit Answer</span>
+  </a>
+</div>
+
 <script>
   document.addEventListener("astro:page-load", () => {
     console.log("page loaded");
@@ -22,18 +24,22 @@
     button.addEventListener(
       "click",
       () => {
+        // When the answer is not submitted
         if (!isSubmitted) {
           button.textContent = "Next Question";
           isSubmitted = !isSubmitted;
           return;
         }
+
+        // When the answer is submitted
         if (isSubmitted) {
           console.log("submitted");
+
+          // check if the last part is a number
           if (parseInt(lastPart)) {
             /**
              * @TODO Change the hard 10 to the number of questions
              */
-
             const nextQuestion =
               parseInt(lastPart) < 10 ? parseInt(lastPart) + 1 : "score";
             button.href = `/${nextQuestion}`;
