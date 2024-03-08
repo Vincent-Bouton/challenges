@@ -9,8 +9,34 @@ import Selection from "../components/Selection.astro";
     <Selection answer="test" correctAnswer="test" order={0} />
     <Selection answer="test 1" correctAnswer="test" order={1} />
     <Selection answer="test 2" correctAnswer="test" order={2} />
-
     <Selection answer="test 3" correctAnswer="test" order={3} />
     <Button />
   </div>
 </Layout>
+<script>
+  document.addEventListener(
+    "astro:page-load",
+    () => {
+      const selections = document.querySelectorAll(".selection");
+      selections.forEach((select) => {
+        select.addEventListener("click", (e) => {
+          const selected = document.querySelector(".selected");
+          if (selected) {
+            selected.classList.remove("border-primary-idle");
+            selected.classList.add("border-white");
+            selected.classList.remove("selected");
+          }
+          console.log(e);
+          let target = e.target;
+          if (e.target.nodeName === "SPAN") {
+            target = e.target.parentElement;
+          }
+          target.classList.add("border-primary-idle");
+          target.classList.add("selected");
+          target.classList.remove("border-white");
+        });
+      });
+    },
+    { once: false },
+  );
+</script>

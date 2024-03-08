@@ -10,10 +10,10 @@ const orderLetter = orderToLetter(order);
 
 <div class="flex flex-grow">
   <div
-    class="flex w-full flex-grow items-center gap-4 rounded-md bg-white px-6 py-2 shadow-xl"
+    class=`selection border-2 border-white cursor-pointer flex w-full flex-grow items-center gap-4 rounded-md bg-white px-6 py-2 shadow-xl ${correctAnswer === answer ? "green" : "red"}`
   >
     <span
-      class="flex size-10 items-center justify-center rounded-md bg-lightGrey font-medium text-navy"
+      class=`flex size-10 items-center justify-center rounded-md bg-lightGrey font-medium text-navy`
     >
       {orderLetter}
     </span>
