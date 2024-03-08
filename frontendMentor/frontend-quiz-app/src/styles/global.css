@@ -1,4 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 @import "tailwind.css";
+.selected {
+  @apply border-primary-idle transition-all;
+}
+
+.selected .letter {
+  @apply bg-primary-idle text-white transition-all;
+}
+
+.unselected {
+  @apply border-white transition-all;
+}
+
+.unselected .letter {
+  @apply bg-lightGrey text-navy transition-all;
+}
 
 /*# sourceMappingURL=global.css.map */

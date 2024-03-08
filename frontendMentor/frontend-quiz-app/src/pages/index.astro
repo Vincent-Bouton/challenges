@@ -22,8 +22,7 @@ import Selection from "../components/Selection.astro";
         select.addEventListener("click", (e) => {
           const selected = document.querySelector(".selected");
           if (selected) {
-            selected.classList.remove("border-primary-idle");
-            selected.classList.add("border-white");
+            selected.classList.add("unselected");
             selected.classList.remove("selected");
           }
           console.log(e);
@@ -31,9 +30,8 @@ import Selection from "../components/Selection.astro";
           if (e.target.nodeName === "SPAN") {
             target = e.target.parentElement;
           }
-          target.classList.add("border-primary-idle");
           target.classList.add("selected");
-          target.classList.remove("border-white");
+          target.classList.remove("unselected");
         });
       });
     },
